@@ -1,4 +1,5 @@
 const figmaImages = {
+  logo: "assets/brand/illuminate-logo.png",
   footer: "assets/figma/illuminate-footer-background.jpg",
   pix: "assets/figma/PIX.png",
   csx: "assets/figma/CSX.png",
@@ -482,7 +483,7 @@ function renderFooter() {
     <footer class="footer" style="--footer-image: url('${figmaImages.footer}')">
       <div class="container">
         <div class="footer-main">
-          <span class="brand-mark">illuminate<span class="brand-spark"></span></span>
+          <a class="brand-mark footer-brand" href="#/" aria-label="Illuminate home"><img src="${figmaImages.logo}" alt="Illuminate" /></a>
           <div>
             <h2>Contact:</h2>
             <p><a href="mailto:${contact.email}">${contact.email}</a></p>

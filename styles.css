@@ -97,35 +97,15 @@ img {
 }
 
 .brand-mark {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  color: var(--blue);
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 27px;
-  font-weight: 600;
-  line-height: 1;
+  width: 188px;
+  max-width: 46vw;
 }
 
-.brand-spark {
-  position: relative;
-  width: 18px;
-  height: 18px;
-  margin-left: 1px;
-  border: 4px solid var(--yellow);
-  border-left-color: transparent;
-  border-radius: 999px;
-}
-
-.brand-spark::after {
-  position: absolute;
-  right: -7px;
-  top: 3px;
-  width: 5px;
-  height: 5px;
-  content: "";
-  border-radius: 999px;
-  background: var(--yellow);
+.brand-mark img {
+  width: 100%;
+  height: auto;
 }
 
 .nav-menu {
@@ -1069,8 +1049,10 @@ h3 {
 }
 
 .footer .brand-mark {
-  color: var(--white);
-  font-size: 42px;
+  width: 240px;
+  padding: 13px 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 8px;
 }
 
 .footer h2 {
@@ -1207,7 +1189,7 @@ h3 {
   }
 
   .brand-mark {
-    font-size: 24px;
+    width: 154px;
   }
 
   .hero,
@@ -1325,5 +1307,9 @@ h3 {
   .footer-main,
   .newsletter {
     grid-template-columns: 1fr;
+  }
+
+  .footer .brand-mark {
+    width: 210px;
   }
 }
