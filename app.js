@@ -373,6 +373,46 @@ function currentPath() {
   return window.location.hash.replace(/^#/, "") || "/";
 }
 
+function isEmbedded() {
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
+  }
+}
+
+function routeFromText(value) {
+  const source = decodeURIComponent(String(value || ""))
+    .toLowerCase()
+    .replace(/[-_+]+/g, " ");
+
+  const matches = [
+    { pattern: /\b(e ?learning|elearning)\b/, route: "/services/elearning" },
+    { pattern: /\bworkshops?\b/, route: "/services/workshops" },
+    { pattern: /\blearning retention\b|\bretention\b/, route: "/services/learning-retention" },
+    { pattern: /\b(pi explorer|pix|prescribing information)\b/, route: "/products/pi-explorer" },
+    { pattern: /\b(cs explorer|clinical study|clinical studies)\b/, route: "/products/cs-explorer" },
+    { pattern: /\b(magister|lms)\b/, route: "/products/magister-lms" },
+    { pattern: /\b(leadership|bootcamp|babson)\b/, route: leadership.route },
+    { pattern: /\babout\b/, route: "/about" },
+    { pattern: /\bcontact\b/, route: "/contact" },
+    { pattern: /\b(news|media|awards?)\b/, route: "/news" },
+    { pattern: /\bpartners?\b/, route: "/partners" },
+    { pattern: /\bsolutions?\b/, route: "/solutions" },
+  ];
+
+  return matches.find((item) => item.pattern.test(source))?.route || null;
+}
+
+function syncEmbeddedRouteFromParent() {
+  if (!isEmbedded()) return;
+
+  const parentRoute = routeFromText(document.referrer);
+  if (parentRoute && currentPath() !== parentRoute) {
+    window.history.replaceState(null, "", pathToHash(parentRoute));
+  }
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -887,6 +927,7 @@ function renderRoute() {
 }
 
 function init() {
+  syncEmbeddedRouteFromParent();
   renderNav();
   renderRoute();
 
