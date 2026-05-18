@@ -46,13 +46,13 @@ const solutions = [
     type: "Service",
     title: "eLearning",
     navTitle: "eLearning",
-    route: "/services/elearning",
+    route: "/elearning",
     icon: "eL",
     iconImage: figmaImages.icons.foundational,
     detailIcon: figmaImages.icons.foundationalBlue,
     image: figmaImages.elearningMockups,
     video: figmaVideos.elearningDemo,
-    kicker: "Our solutions: eLearning",
+    kicker: "OUR SOLUTIONS: eLEARNING",
     headline: "Innovative solutions for every field training need.",
     short:
       "Engaging, interactive programming that adds flexibility, interactivity, and fun to your curriculum.",
@@ -65,13 +65,13 @@ const solutions = [
     type: "Service",
     title: "Workshops",
     navTitle: "Workshops",
-    route: "/services/workshops",
+    route: "/workshops",
     icon: "W",
     iconImage: figmaImages.icons.nationalMeetings,
     detailIcon: figmaImages.icons.productLaunchBlue,
     image: figmaImages.workshop,
     video: figmaVideos.workshopPresentation,
-    kicker: "Our solutions: Workshops",
+    kicker: "OUR SOLUTIONS: WORKSHOPS",
     headline: "Innovative solutions for every field training need.",
     short: "Team exercises, activities, games, and presentations tailored to your field goals and training needs.",
     body: [
@@ -95,12 +95,12 @@ const solutions = [
     type: "Service",
     title: "Learning Retention",
     navTitle: "Learning Retention",
-    route: "/services/learning-retention",
+    route: "/learning-retention",
     icon: "LR",
     iconImage: figmaImages.icons.retention,
     detailIcon: figmaImages.icons.retentionBlue,
     image: figmaImages.platforms,
-    kicker: "Our solutions: Learning Retention",
+    kicker: "OUR SOLUTIONS: LEARNING RETENTION",
     headline: "Innovative solutions for every field training need.",
     short:
       "Purposeful games, podcasts, microlearning, and other strategies that reinforce learning and ensure content sticks.",
@@ -115,12 +115,12 @@ const solutions = [
     type: "Product",
     title: "PI Explorer",
     navTitle: "PI Explorer",
-    route: "/products/pi-explorer",
+    route: "/pi-explorer",
     icon: "PI",
     iconImage: figmaImages.icons.productLaunch,
     detailIcon: figmaImages.icons.productLaunchBlue,
     image: figmaImages.pix,
-    kicker: "Our solutions: PI Explorer",
+    kicker: "OUR SOLUTIONS: PI EXPLORER",
     headline: "Innovative solutions for every sales training need.",
     short:
       "An award-winning, comprehensive, easy-to-grasp method for delivering complex prescribing information quickly and successfully.",
@@ -133,12 +133,12 @@ const solutions = [
     type: "Product",
     title: "Clinical Study Explorer",
     navTitle: "CS Explorer",
-    route: "/products/cs-explorer",
+    route: "/cs-explorer",
     icon: "CS",
     iconImage: figmaImages.icons.innovations,
     detailIcon: figmaImages.icons.innovationsBlue,
     image: figmaImages.csx,
-    kicker: "Our solutions: Clinical Study Explorer",
+    kicker: "OUR SOLUTIONS: Clinical Study Explorer",
     headline: "Innovative solutions for every sales training need.",
     short:
       "Similar to PI Explorer, Clinical Study Explorer is an impactful approach to training on and retaining clinical study information.",
@@ -152,12 +152,12 @@ const solutions = [
     type: "Product",
     title: "Magister LMS",
     navTitle: "Magister LMS",
-    route: "/products/magister-lms",
+    route: "/magister-lms",
     icon: "LMS",
     iconImage: figmaImages.icons.rareDisease,
     detailIcon: figmaImages.icons.rareDiseaseBlue,
     image: figmaImages.elearning,
-    kicker: "Our solutions: Magister LMS",
+    kicker: "OUR SOLUTIONS: MAGISTER LMS",
     headline: "Innovative solutions for every field training need.",
     short: "Illuminate’s Magister allows for customization of branding, layout, and content organization.",
     body: [
@@ -184,26 +184,26 @@ const leadership = {
 };
 
 const team = [
-  ["Shaun McMahon", "President, Founder"],
-  ["Maria Bocanegra", "Project Director"],
-  ["Nathanael Otañez", "Project Manager"],
-  ["Kristian Dawes", "Learning Platform Specialist"],
-  ["Faridon Dadrass", "Vice President of Operations"],
-  ["Daniel Goldsmith", "Project Director"],
-  ["Mason Jones", "Business Development Specialist"],
-  ["William Hwang", "Sr. Medical Editor"],
-  ["Juan Carlos Pinedo", "Dir, Learning Technology"],
-  ["Kara Fitzgibbon", "Sr. Business Dev. Project Mgr."],
-  ["Mike Miedzianowski", "Business Development Specialist"],
-  ["Vrushali Nar", "eLearning Developer"],
-  ["Carly Commiso", "Director of Learning Strategy"],
-  ["Sarah Looney", "Sr. Project Manager"],
-  ["Janiel Rosario", "Project Associate"],
-  ["Prasanna Ranade", "Sr. Graphic Designer"],
-  ["Ryan Hoke", "Business Development Director"],
-  ["Farheen Shaikh", "Medical Reviewer"],
-  ["Lauren McNally", "Assoc. Dir. of Learning Strategy"],
-  ["Rich Daley", "Graphic Designer / Sr. Graphic Designer"],
+  { name: "Shaun McMahon", title: "President, Founder", image: "assets/team/shaun-mcmahon.jpg" },
+  { name: "Maria Bocanegra", title: "Project Director", image: "assets/team/maria-bocanegra.jpg" },
+  { name: "Nathanael Otañez", title: "Project Manager", image: "assets/team/nathanael-otanez.jpg" },
+  { name: "Kristian Dawes", title: "Learning Platform Specialist", image: "assets/team/kristian-dawes.jpg" },
+  { name: "Faridon Dadrass", title: "Vice President of Operations", image: "assets/team/faridon-dadrass.jpg" },
+  { name: "Daniel Goldsmith", title: "Project Director", image: "assets/team/daniel-goldsmith.jpg" },
+  { name: "Mason Jones", title: "Business Development Specialist", image: "assets/team/mason-jones.jpg" },
+  { name: "William Hwang", title: "Sr. Medical Editor", image: "assets/team/william-hwang.jpg" },
+  { name: "Juan Carlos Pinedo", title: "Dir, Learning Technology", image: "assets/team/juan-carlos-pinedo.jpg" },
+  { name: "Kara Fitzgibbon", title: "Sr. Business Dev. Project Mgr.", image: "assets/team/kara-fitzgibbon.jpg" },
+  { name: "Mike Miedzianowski", title: "Business Development Specialist", image: "assets/team/mike-miedzianowski.jpg" },
+  { name: "Vrushali Nar", title: "eLearning Developer", image: "assets/team/vrushali-nar.jpg" },
+  { name: "Carly Commiso", title: "Director of Learning Strategy", image: "assets/team/carly-commiso.jpg" },
+  { name: "Sarah Looney", title: "Sr. Project Manager", image: "assets/team/sarah-looney.jpg" },
+  { name: "Janiel Rosario", title: "Project Associate", image: "assets/team/janiel-rosario.jpg" },
+  { name: "Prasanna Ranade", title: "Sr. Graphic Designer", image: "assets/team/prasanna-ranade.jpg" },
+  { name: "Ryan Hoke", title: "Business Development Director", image: "assets/team/ryan-hoke.jpg" },
+  { name: "Farheen Shaikh", title: "Medical Reviewer", image: "assets/team/farheen-shaikh.jpg" },
+  { name: "Lauren McNally", title: "Assoc. Dir. of Learning Strategy", image: "assets/team/lauren-mcnally.jpg" },
+  { name: "Rich Daley", title: "Graphic Designer / Sr. Graphic Designer", image: "assets/team/rich-daley.jpg" },
 ];
 
 const news = [
@@ -346,23 +346,14 @@ const awards = [
 
 const navGroups = [
   { label: "Home", route: "/" },
+  { label: "About", route: "/about-us" },
   {
-    label: "Services",
-    items: solutions.filter((item) => item.type === "Service").map(({ navTitle, route }) => ({ label: navTitle, route })),
+    label: "Solutions",
+    items: solutions.map(({ navTitle, route }) => ({ label: navTitle, route })),
   },
-  {
-    label: "Products",
-    items: solutions.filter((item) => item.type === "Product").map(({ navTitle, route }) => ({ label: navTitle, route })),
-  },
-  { label: "Leadership", route: leadership.route },
-  {
-    label: "Media",
-    items: [
-      { label: "News", route: "/news" },
-      { label: "Partners", route: "/partners" },
-    ],
-  },
-  { label: "About", route: "/about" },
+  { label: "Leadership Bootcamp", route: leadership.route },
+  { label: "News", route: "/news" },
+  { label: "Partners", route: "/partners" },
   { label: "Contact", route: "/contact" },
 ];
 
@@ -372,6 +363,21 @@ function pathToHash(route) {
 
 function currentPath() {
   return window.location.hash.replace(/^#/, "") || "/";
+}
+
+function canonicalPath(path) {
+  const aliases = {
+    "/about": "/about-us",
+    "/solutions": "/our-solutions",
+    "/services/elearning": "/elearning",
+    "/services/workshops": "/workshops",
+    "/services/learning-retention": "/learning-retention",
+    "/products/pi-explorer": "/pi-explorer",
+    "/products/cs-explorer": "/cs-explorer",
+    "/products/magister-lms": "/magister-lms",
+  };
+
+  return aliases[path] || path;
 }
 
 function isEmbedded() {
@@ -388,18 +394,18 @@ function routeFromText(value) {
     .replace(/[-_+]+/g, " ");
 
   const matches = [
-    { pattern: /\b(e ?learning|elearning)\b/, route: "/services/elearning" },
-    { pattern: /\bworkshops?\b/, route: "/services/workshops" },
-    { pattern: /\blearning retention\b|\bretention\b/, route: "/services/learning-retention" },
-    { pattern: /\b(pi explorer|pix|prescribing information)\b/, route: "/products/pi-explorer" },
-    { pattern: /\b(cs explorer|clinical study|clinical studies)\b/, route: "/products/cs-explorer" },
-    { pattern: /\b(magister|lms)\b/, route: "/products/magister-lms" },
+    { pattern: /\b(e ?learning|elearning)\b/, route: "/elearning" },
+    { pattern: /\bworkshops?\b/, route: "/workshops" },
+    { pattern: /\blearning retention\b|\bretention\b/, route: "/learning-retention" },
+    { pattern: /\b(pi explorer|pix|prescribing information)\b/, route: "/pi-explorer" },
+    { pattern: /\b(cs explorer|clinical study|clinical studies)\b/, route: "/cs-explorer" },
+    { pattern: /\b(magister|lms)\b/, route: "/magister-lms" },
     { pattern: /\b(leadership|bootcamp|babson)\b/, route: leadership.route },
-    { pattern: /\babout\b/, route: "/about" },
+    { pattern: /\babout\b/, route: "/about-us" },
     { pattern: /\bcontact\b/, route: "/contact" },
     { pattern: /\b(news|media|awards?)\b/, route: "/news" },
     { pattern: /\bpartners?\b/, route: "/partners" },
-    { pattern: /\bsolutions?\b/, route: "/solutions" },
+    { pattern: /\bsolutions?\b/, route: "/our-solutions" },
   ];
 
   return matches.find((item) => item.pattern.test(source))?.route || null;
@@ -429,7 +435,7 @@ function paragraphs(items) {
 
 function renderIcon(item, variant = "default") {
   const src = variant === "detail" && item.detailIcon ? item.detailIcon : item.iconImage;
-  if (src) {
+  if (item.useAssetIcon && src) {
     return `
       <span class="figma-icon ${variant === "detail" ? "detail-icon" : ""}" aria-hidden="true">
         <img src="${src}" alt="" />
@@ -575,8 +581,8 @@ function renderHome() {
           <h2>Custom products that make complex content easier to grasp.</h2>
           <p>PI Explorer, Clinical Study Explorer, and Magister LMS help field representatives understand critical information, retain clinical study content, and access learning in a platform that can be customized to your brand, layout, and content organization.</p>
           <div class="actions">
-            <a class="button" href="#/products/pi-explorer">Product Details</a>
-          <a class="button secondary" href="#/products/magister-lms">Explore LMS</a>
+            <a class="button" href="#/pi-explorer">Product Details</a>
+          <a class="button secondary" href="#/magister-lms">Explore LMS</a>
           </div>
         </div>
         <div class="visual-panel">
@@ -597,7 +603,7 @@ function renderHome() {
           <h2>Training experiences designed to make knowledge stick.</h2>
           <p>Use video, interactivity, and learning technology to turn complicated clinical content into clear, memorable moments your field team can apply.</p>
           <div class="actions">
-            <a class="button" href="#/services/elearning">Explore eLearning</a>
+            <a class="button" href="#/elearning">Explore eLearning</a>
           </div>
         </div>
       </div>
@@ -616,7 +622,7 @@ function renderHome() {
           <p>Our client-focused, full-service team works as an extension of your internal team, with a thorough understanding of your products and culture.</p>
           <div class="actions">
             <a class="button" href="#/partners">View Partners</a>
-            <a class="button secondary" href="#/about">Meet the Team</a>
+            <a class="button secondary" href="#/about-us">Meet the Team</a>
           </div>
         </div>
       </div>
@@ -643,7 +649,7 @@ function renderHome() {
 
 function renderSolutionsOverview() {
   return `
-    ${renderHeader("Our Solutions", "Innovative solutions for every commercial and medical training need.")}
+    ${renderHeader("OUR SOLUTIONS", "Innovative solutions for every commercial and medical training need.")}
     <section class="section">
       <div class="container">
         <div class="prose">
@@ -712,7 +718,7 @@ function renderLeadership() {
 
 function renderAbout() {
   return `
-    ${renderHeader("About Us", "We consistently earn high marks for the caliber of our work, our thorough understanding of the life sciences marketplace, and the passionate and positive attitude with which we approach every project.")}
+    ${renderHeader("ABOUT US", "We consistently earn high marks for the caliber of our work, our thorough understanding of the life sciences marketplace, and the passionate and positive attitude with which we approach every project.")}
     <section class="section compact">
       <div class="container">
         <img class="wide-asset" src="${figmaImages.wordCloud}" alt="Illuminate values word cloud from the Figma design" />
@@ -744,25 +750,19 @@ function renderAbout() {
         <div class="section-head">
           <div>
             <p class="eyebrow">Our Team</p>
-            <h2>Current Illuminate team</h2>
+            <h2>Our Team</h2>
           </div>
           <span class="rule" aria-hidden="true"></span>
         </div>
         <div class="team-grid">
           ${team
-            .map(([name, title]) => {
-              const initials = name
-                .split(" ")
-                .filter(Boolean)
-                .slice(0, 2)
-                .map((part) => part[0])
-                .join("");
+            .map((member) => {
               return `
                 <article class="team-card">
-                  <div class="avatar" aria-hidden="true">${escapeHtml(initials)}</div>
+                  <img class="avatar" src="${member.image}" alt="${escapeHtml(member.name)}" loading="lazy" />
                   <div>
-                    <h3>${escapeHtml(name)}</h3>
-                    <p>${escapeHtml(title)}</p>
+                    <h3>${escapeHtml(member.name)}</h3>
+                    <p>${escapeHtml(member.title)}</p>
                   </div>
                 </article>
               `;
@@ -786,7 +786,7 @@ function renderAbout() {
 
 function renderNews() {
   return `
-    ${renderHeader("News", "Here is a a selection of Illuminate’s recent press coverage and awards.")}
+    ${renderHeader("NEWS", "Here is a a selection of Illuminate’s recent press coverage and awards.")}
     <section class="section">
       <div class="container">
         <div class="section-head">
@@ -842,7 +842,7 @@ function renderNews() {
 
 function renderPartners() {
   return `
-    ${renderHeader("Partners", "Illuminate is a proud partner of the following life sciences field training and development leaders.")}
+    ${renderHeader("PARTNERS", "Illuminate is a proud partner of the following life sciences field training and development leaders.")}
     <section class="section">
       <div class="container split-grid">
         <div class="client-orbit" aria-label="Client logos from the Figma design">
@@ -865,7 +865,7 @@ function renderPartners() {
 
 function renderContact() {
   return `
-    ${renderHeader("Contact Us", "Start a project, schedule a consultation, or connect with the Illuminate team.")}
+    ${renderHeader("CONTACT US", "Start a project, schedule a consultation, or connect with the Illuminate team.")}
     <section class="section">
       <div class="container contact-layout">
         <aside class="contact-panel">
@@ -908,15 +908,15 @@ function renderNotFound() {
 }
 
 function renderRoute() {
-  const path = currentPath();
+  const path = canonicalPath(currentPath());
   const app = document.getElementById("app");
   const solution = solutions.find((item) => item.route === path);
 
   if (path === "/") app.innerHTML = renderHome();
-  else if (path === "/solutions") app.innerHTML = renderSolutionsOverview();
+  else if (path === "/our-solutions") app.innerHTML = renderSolutionsOverview();
   else if (solution) app.innerHTML = renderDetail(solution);
   else if (path === leadership.route) app.innerHTML = renderLeadership();
-  else if (path === "/about") app.innerHTML = renderAbout();
+  else if (path === "/about-us") app.innerHTML = renderAbout();
   else if (path === "/news") app.innerHTML = renderNews();
   else if (path === "/partners") app.innerHTML = renderPartners();
   else if (path === "/contact") app.innerHTML = renderContact();

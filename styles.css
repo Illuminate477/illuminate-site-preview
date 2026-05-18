@@ -878,8 +878,7 @@ h3 {
 }
 
 .avatar {
-  display: grid;
-  place-items: center;
+  display: block;
   width: 176px;
   height: 176px;
   border-radius: 999px;
@@ -889,6 +888,7 @@ h3 {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 48px;
   font-weight: 700;
+  object-fit: cover;
 }
 
 .team-card h3 {
