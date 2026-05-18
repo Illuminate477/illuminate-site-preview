@@ -184,26 +184,132 @@ const leadership = {
 };
 
 const team = [
-  { name: "Shaun McMahon", title: "President, Founder", image: "assets/team/shaun-mcmahon.jpg" },
-  { name: "Maria Bocanegra", title: "Project Director", image: "assets/team/maria-bocanegra.jpg" },
-  { name: "Nathanael Otañez", title: "Project Manager", image: "assets/team/nathanael-otanez.jpg" },
-  { name: "Kristian Dawes", title: "Learning Platform Specialist", image: "assets/team/kristian-dawes.jpg" },
-  { name: "Faridon Dadrass", title: "Vice President of Operations", image: "assets/team/faridon-dadrass.jpg" },
-  { name: "Daniel Goldsmith", title: "Project Director", image: "assets/team/daniel-goldsmith.jpg" },
-  { name: "Mason Jones", title: "Business Development Specialist", image: "assets/team/mason-jones.jpg" },
-  { name: "William Hwang", title: "Sr. Medical Editor", image: "assets/team/william-hwang.jpg" },
-  { name: "Juan Carlos Pinedo", title: "Dir, Learning Technology", image: "assets/team/juan-carlos-pinedo.jpg" },
-  { name: "Kara Fitzgibbon", title: "Sr. Business Dev. Project Mgr.", image: "assets/team/kara-fitzgibbon.jpg" },
-  { name: "Mike Miedzianowski", title: "Business Development Specialist", image: "assets/team/mike-miedzianowski.jpg" },
-  { name: "Vrushali Nar", title: "eLearning Developer", image: "assets/team/vrushali-nar.jpg" },
-  { name: "Carly Commiso", title: "Director of Learning Strategy", image: "assets/team/carly-commiso.jpg" },
-  { name: "Sarah Looney", title: "Sr. Project Manager", image: "assets/team/sarah-looney.jpg" },
-  { name: "Janiel Rosario", title: "Project Associate", image: "assets/team/janiel-rosario.jpg" },
-  { name: "Prasanna Ranade", title: "Sr. Graphic Designer", image: "assets/team/prasanna-ranade.jpg" },
-  { name: "Ryan Hoke", title: "Business Development Director", image: "assets/team/ryan-hoke.jpg" },
-  { name: "Farheen Shaikh", title: "Medical Reviewer", image: "assets/team/farheen-shaikh.jpg" },
-  { name: "Lauren McNally", title: "Assoc. Dir. of Learning Strategy", image: "assets/team/lauren-mcnally.jpg" },
-  { name: "Rich Daley", title: "Graphic Designer / Sr. Graphic Designer", image: "assets/team/rich-daley.jpg" },
+  {
+    name: "Shaun McMahon",
+    title: "President, Founder",
+    image: "assets/team/shaun-mcmahon.jpg",
+    bio: "Shaun’s aim is to ensure the goals and expectations of Illuminate’s clients are understood, realized, and exceeded. Shaun boasts a diverse background in training and development, with over 20 years of experience in the pharmaceutical, computer, and automobile industries. He also holds a BS in marketing and entrepreneurial studies from Babson College. Before founding Illuminate in 2004, Shaun worked as director of project development for pharmaceutical sales training company Total Learning Concepts and as national training manager for Medeva Pharmaceuticals, where he developed training programs for several leaders in the pharmaceutical industry. Shaun oversees the operations of Illuminate and is often the main point of contact between the company and its clients, allowing him to ensure that messages are communicated throughout the teams and that the end product is more than satisfactory to the client.",
+  },
+  {
+    name: "Maria Bocanegra",
+    title: "Project Director",
+    image: "assets/team/maria-bocanegra.jpg",
+    bio: "Maria brings to Illuminate expertise in higher education project management and curriculum development, including experience creating custom academic engagements for adult learners earning graduate degrees. She holds a BA in International Relations from the University of Virginia and an MA in Political Science from Virginia Tech.",
+  },
+  {
+    name: "Nathanael Otañez",
+    title: "Project Manager",
+    image: "assets/team/nathanael-otanez.jpg",
+    bio: "Nathanael is a Project Manager who brings a wealth of expertise from his previous experiences in research project management and higher education. He holds an MS in Health Policy & Economics from Cornell University as well as a BS in Biology and Society, with minors in Business and Health Policy. Nathanael is committed to honing his skills and skilled in delivering creative solutions, making him an asset to our team.",
+  },
+  {
+    name: "Kristian Dawes",
+    title: "Learning Platform Specialist",
+    image: "assets/team/kristian-dawes.jpg",
+    bio: "As a Customer Success Specialist on the Learning Technology Team, Kristian assists our Learning Management System (LMS) clients in the life sciences. His responsibilities include resolving technical issues, optimizing eLearning experiences, and ensuring clients are able to fully utilize our LMS. Kristian's commitment to customer satisfaction and his aptitude for technology position him to make significant contributions to Illuminate and our clients.",
+  },
+  {
+    name: "Faridon Dadrass",
+    title: "Vice President of Operations",
+    image: "assets/team/faridon-dadrass.jpg",
+    bio: "As Vice President of Operations Faridon seizes opportunities to help Illuminate to operate with the utmost efficiency. He oversees all operational aspects of Illuminate’s business, including, finance, facilities, human resources, information technology. Faridon has built upon his experience in the financial services and hospitality management sectors, and co-founded his own company in 2011. Faridon received a BS in business administration and marketing from Southern New Hampshire University.",
+  },
+  {
+    name: "Daniel Goldsmith",
+    title: "Project Director",
+    image: "assets/team/daniel-goldsmith.jpg",
+    bio: "Daniel applies his extensive background in overseeing the production of sales training materials for the life sciences industry to ensure projects stay on time, on budget, and within scope. He has worked in the eLearning industry for 20 years, over half of those as a project manager. During that time, he has shepherded a diverse range of projects to successful completion. He holds a BS in TV and radio broadcasting with a minor in corporate communications from Ithaca College.",
+  },
+  {
+    name: "Mason Jones",
+    title: "Business Development Specialist",
+    image: "assets/team/mason-jones.jpg",
+    bio: "Mason Jones brings over 6 years of B2B sales experience to Illuminate, with a strong track record of building relationships and generating new business across multiple industries. His background spans technology, communications, and life sciences, giving him a well-rounded perspective on the challenges organizations face when developing and enabling their field teams.\n\nA graduate of the University of Georgia with a BS in Biology and a minor in Psychology, Mason combines analytical thinking with a strong understanding of human behavior, allowing him to take a thoughtful, consultative approach to business development and client engagement.",
+  },
+  {
+    name: "William Hwang",
+    title: "Sr. Medical Editor",
+    modalTitle: "Senior Medical Editor",
+    image: "assets/team/william-hwang.jpg",
+    bio: "William is a senior medical editor with experience ranging from rebranding a discontinued campus magazine to coordinating career development and learning activities for interns. Prior to joining Illuminate, William worked as an assistant editor at Macmillan Learning. He holds a BA in English Language and Literature from Boston College.",
+  },
+  {
+    name: "Juan Carlos Pinedo",
+    title: "Dir, Learning Technology",
+    modalTitle: "Director of Learning Technology",
+    image: "assets/team/juan-carlos-pinedo.jpg",
+    bio: "Juan Carlos brings extensive business management, writing, communications, and sales experience to Illuminate. He started out in the field of journalism as a news writer for a local radio station, then moved into a successful sales career with Moore Business Forms. His business management background includes serving as operations manager for an insurance company and launching/operating a cleaning services company. Born in Maracaibo, Venezuela, Juan Carlos is fluent in Spanish and English. He received a BS in Journalism from the Universidad Cecilio Acosta in Maracaibo and is a firm believer in continuing education and a global approach to learning.",
+  },
+  {
+    name: "Kara Fitzgibbon",
+    title: "Sr. Business Dev. Project Mgr.",
+    modalTitle: "Senior Business Development Project Manager",
+    image: "assets/team/kara-fitzgibbon.jpg",
+    bio: "Thanks to previous project management and related client-serving positions, Kara came to Illuminate with a robust understanding of the pharmaceutical industry and the clinical trials process. As a member of Illuminate’s project management team, Kara oversees the production of a range of educational materials, from eLearning courses to workshop content. She has a BS in marketing from Syracuse University’s Whitman School of Management",
+  },
+  {
+    name: "Mike Miedzianowski",
+    title: "Business Development Specialist",
+    image: "assets/team/mike-miedzianowski.jpg",
+    bio: "Mike Miedzianowski brings a rare combination of elite competitive drive and refined business acumen to every professional endeavor. A standout athlete, Mike was drafted by the Baltimore Orioles in 2011. He attended High Point University as a student athlete and finished obtaining his bachelor’s in business administration from Indian River State College.\n\nFor over 9 years, Mike has thrived in the competitive world of high-end jewelry and Swiss timepieces, developing expertise in luxury brand representation, high net-worth client engagement, and consultative sales. Mike leverages his background in high-performance environments with strong business acumen, enabling him to build strategic relationships and drive growth by connecting clients with impactful training solutions.",
+  },
+  {
+    name: "Vrushali Nar",
+    title: "eLearning Developer",
+    image: "assets/team/vrushali-nar.jpg",
+    bio: "With over a decade of experience in eLearning development, Vrushali designs impactful, learner-focused training solutions that drive engagement and retention. She is highly skilled in a wide range of authoring tools and has a proven track record in developing instructor-led, virtual, and blended learning programs. Vrushali combines creativity with instructional design best practices to deliver meaningful learning experiences tailored to life sciences field teams.",
+  },
+  {
+    name: "Carly Commiso",
+    title: "Director of Learning Strategy",
+    image: "assets/team/carly-commiso.jpg",
+    bio: "Carly brings extensive expertise in instructional model and curriculum development to Illuminate, including experience creating outcome-focused online learning materials using science-based instructional design principles. Carly holds a dual BA in human services and international affairs from Northeastern University, along with an MEd in instructional design from the University of Massachusetts Boston.",
+  },
+  {
+    name: "Sarah Looney",
+    title: "Sr. Project Manager",
+    modalTitle: "Project Manager",
+    image: "assets/team/sarah-looney.jpg",
+    bio: "Sarah’s years of project management and leadership experience make her a valuable asset at Illuminate. Having previously worked in the pharmaceutical and biotech industry, Sarah has deep understanding of sales training and medical education needs. She enjoys working in a client-faced role and ensuring the timely delivery of high-quality products, excelling at establishing accurate timelines and a consistent workflow. Sarah holds a BA in Communication and a minor in Business Marketing from La Salle University.",
+  },
+  {
+    name: "Janiel Rosario",
+    title: "Project Associate",
+    image: "assets/team/janiel-rosario.jpg",
+    bio: "Janiel Rosario, an ambitious Project Associate intern at Illuminate and a passionate student at Year Up, a program designed to close the opportunity divide by providing young adults with skills, experience, and support, is committed to excelling in project management. With the skills acquired at Year Up, Janiel brings experience in customer-centered roles, with a focus on adaptability, communication, and problem-solving.",
+  },
+  {
+    name: "Prasanna Ranade",
+    title: "Sr. Graphic Designer",
+    modalTitle: "Senior Graphic Designer",
+    image: "assets/team/prasanna-ranade.jpg",
+    bio: "As a Graphic Designer, Prasanna applies his graphic design expertise in visual conceptualization, layout design, and branding to create custom digital and print content for eLearning modules, workshops, and marketing collateral. He holds a Bachelor of Arts in Graphic Design from Abhinav College of Art, Pune, India.",
+  },
+  {
+    name: "Ryan Hoke",
+    title: "Business Development Director",
+    image: "assets/team/ryan-hoke.jpg",
+    bio: "With 20+ years in sales, account management, and leadership, Ryan is a steady, client-first partner who helps teams cut through complexity, align quickly, and move from strategy to execution with confidence. Her experience spans healthcare, life sciences, and enterprise organizations, including close partnerships with physicians and specialists and leadership of complex accounts and go-to-market efforts. Ryan is known for clear communication, disciplined follow-through, and thoughtful problem-solving—bringing clients practical, high-impact support that strengthens collaboration and delivers results.",
+  },
+  {
+    name: "Farheen Shaikh",
+    title: "Medical Reviewer",
+    image: "assets/team/farheen-shaikh.jpg",
+    bio: "Farheen is a Medical Reviewer at Illuminate with experience in medical and scientific content review across various therapeutic areas and disease states, including oncology and rare diseases. She is committed to applying her expertise in interpreting clinical trial data and conducting literature reviews to ensure accuracy, clarity, and compliance across a wide range of deliverables. Farheen holds a Doctor of Pharmacy (PharmD) and a Master’s in Regulatory Affairs from MCPHS University in Boston.",
+  },
+  {
+    name: "Lauren McNally",
+    title: "Assoc. Dir. of Learning Strategy",
+    modalTitle: "Associate Director of Learning Strategy",
+    image: "assets/team/lauren-mcnally.jpg",
+    bio: "Lauren is an expert in instructional design with extensive experience in creating innovative and impactful training programs for various industries. In her role as Curriculum Design Manager, Lauren uses her expertise in adult learning strategies to design effective and engaging training solutions. She holds a BS in Secondary Education from Pennsylvania State University and is currently pursuing a Master of Education in Learning, Design, and Technology.",
+  },
+  {
+    name: "Rich Daley",
+    title: "Graphic Designer",
+    image: "assets/team/rich-daley.jpg",
+    bio: "With a Bachelor of Fine Arts in Sequential Art from the Savannah College of Art and Design, Rich brings a wealth of experience in visual storytelling, layout design, and corporate brand building. He is a creative problem solver with experience in all aspects of design. The addition of Rich to our creative team ensures that our client’s projects are informative, visually pleasing, and technically sound.",
+  },
 ];
 
 const news = [
@@ -435,7 +541,7 @@ function paragraphs(items) {
 
 function renderIcon(item, variant = "default") {
   const src = variant === "detail" && item.detailIcon ? item.detailIcon : item.iconImage;
-  if (item.useAssetIcon && src) {
+  if (src) {
     return `
       <span class="figma-icon ${variant === "detail" ? "detail-icon" : ""}" aria-hidden="true">
         <img src="${src}" alt="" />
@@ -756,18 +862,32 @@ function renderAbout() {
         </div>
         <div class="team-grid">
           ${team
-            .map((member) => {
+            .map((member, index) => {
               return `
-                <article class="team-card">
+                <button class="team-card team-card-button" type="button" data-team-index="${index}" aria-label="Read bio for ${escapeHtml(member.name)}">
                   <img class="avatar" src="${member.image}" alt="${escapeHtml(member.name)}" loading="lazy" />
                   <div>
                     <h3>${escapeHtml(member.name)}</h3>
                     <p>${escapeHtml(member.title)}</p>
                   </div>
-                </article>
+                  <span class="text-link">Read Bio</span>
+                </button>
               `;
             })
             .join("")}
+        </div>
+        <div class="team-modal" id="team-modal" hidden>
+          <div class="team-modal-backdrop" data-close-team-modal></div>
+          <article class="team-modal-card" role="dialog" aria-modal="true" aria-labelledby="team-modal-name">
+            <button class="team-modal-close" type="button" data-close-team-modal aria-label="Close bio">X</button>
+            <img class="team-modal-image" id="team-modal-image" src="" alt="" />
+            <div class="team-modal-copy">
+              <p class="eyebrow">Our Team</p>
+              <h2 id="team-modal-name"></h2>
+              <p class="team-modal-title" id="team-modal-title"></p>
+              <p class="team-modal-bio" id="team-modal-bio"></p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -907,10 +1027,42 @@ function renderNotFound() {
   `;
 }
 
+let activeTeamTrigger = null;
+
+function openTeamModal(index) {
+  const member = team[index];
+  const modal = document.getElementById("team-modal");
+  if (!member || !modal) return;
+
+  activeTeamTrigger = document.activeElement;
+  document.getElementById("team-modal-image").src = member.image;
+  document.getElementById("team-modal-image").alt = member.name;
+  document.getElementById("team-modal-name").textContent = member.name;
+  document.getElementById("team-modal-title").textContent = member.modalTitle || member.title;
+  document.getElementById("team-modal-bio").textContent = member.bio;
+  modal.hidden = false;
+  document.body.classList.add("modal-open");
+  modal.querySelector(".team-modal-close")?.focus();
+}
+
+function closeTeamModal() {
+  const modal = document.getElementById("team-modal");
+  if (!modal || modal.hidden) return;
+
+  modal.hidden = true;
+  document.body.classList.remove("modal-open");
+  if (activeTeamTrigger && typeof activeTeamTrigger.focus === "function") {
+    activeTeamTrigger.focus();
+  }
+  activeTeamTrigger = null;
+}
+
 function renderRoute() {
   const path = canonicalPath(currentPath());
   const app = document.getElementById("app");
   const solution = solutions.find((item) => item.route === path);
+
+  closeTeamModal();
 
   if (path === "/") app.innerHTML = renderHome();
   else if (path === "/our-solutions") app.innerHTML = renderSolutionsOverview();
@@ -939,11 +1091,26 @@ function init() {
   });
 
   document.addEventListener("click", (event) => {
+    const teamButton = event.target.closest("[data-team-index]");
+    if (teamButton) {
+      openTeamModal(Number(teamButton.dataset.teamIndex));
+      return;
+    }
+
+    if (event.target.closest("[data-close-team-modal]")) {
+      closeTeamModal();
+      return;
+    }
+
     const link = event.target.closest("a[href^='#']");
     if (link) {
       document.body.classList.remove("menu-open");
       document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
     }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeTeamModal();
   });
 
   window.addEventListener("hashchange", renderRoute);
