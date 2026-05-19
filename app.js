@@ -995,7 +995,7 @@ function renderAbout() {
           <div class="team-modal-backdrop" data-close-team-modal></div>
           <article class="team-modal-card" role="dialog" aria-modal="true" aria-labelledby="team-modal-name">
             <button class="team-modal-close" type="button" data-close-team-modal aria-label="Close bio">X</button>
-            <img class="team-modal-image" id="team-modal-image" src="" alt="" />
+            <img class="team-modal-image" id="team-modal-image" src="${team[0].image}" alt="${escapeHtml(team[0].name)}" />
             <div class="team-modal-copy">
               <p class="eyebrow">Our Team</p>
               <h2 id="team-modal-name"></h2>
