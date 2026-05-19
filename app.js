@@ -6,6 +6,7 @@ const figmaImages = {
   elearning: "assets/figma/eLearning.png",
   workshop: "assets/figma/Workshop.png",
   elearningMockups: "assets/figma/e-learning-mockups.png",
+  elearningSidebar: "assets/figma/elearning-sidebar-ipad.png",
   elearningCarousel: [
     "assets/figma/elearning-carousel-1.png",
     "assets/figma/elearning-carousel-2.png",
@@ -57,6 +58,7 @@ const solutions = [
     icon: "eL",
     iconImage: figmaImages.icons.foundational,
     detailIcon: figmaImages.icons.foundationalBlue,
+    detailVisualImage: figmaImages.elearningSidebar,
     image: null,
     video: figmaVideos.elearningDemo,
     galleryTitle: "eLearning examples",
@@ -80,11 +82,6 @@ const solutions = [
         src: figmaImages.elearningCarousel[3],
         caption: "Custom module content and assessments",
         alt: "Custom eLearning module and assessment screens",
-      },
-      {
-        src: figmaImages.elearningCarousel[4],
-        caption: "Course materials and knowledge checks",
-        alt: "Course materials and knowledge check examples",
       },
     ],
     kicker: "OUR SOLUTIONS: eLEARNING",
@@ -871,7 +868,11 @@ function renderDetail(item) {
     <section class="section">
       <div class="container detail-layout">
         <aside class="detail-visual">
-          ${renderIcon(item, "detail")}
+          ${
+            item.detailVisualImage
+              ? `<img class="detail-visual-image" src="${item.detailVisualImage}" alt="${escapeHtml(item.title)} visual" />`
+              : renderIcon(item, "detail")
+          }
           <h2>${escapeHtml(item.title)}</h2>
           ${item.image ? `<div class="detail-image"><img class="asset-image" src="${item.image}" alt="${escapeHtml(item.title)} visual" /></div>` : ""}
           <a class="button" href="#/contact">Get Started</a>
