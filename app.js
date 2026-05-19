@@ -52,6 +52,39 @@ const solutions = [
     detailIcon: figmaImages.icons.foundationalBlue,
     image: figmaImages.elearningMockups,
     video: figmaVideos.elearningDemo,
+    galleryTitle: "eLearning examples",
+    gallery: [
+      {
+        src: figmaImages.elearning,
+        position: "center top",
+        caption: "Responsive eLearning course experiences",
+        alt: "eLearning course examples across laptop, tablet, and phone",
+      },
+      {
+        src: figmaImages.elearning,
+        position: "center 28%",
+        caption: "Interactive science and clinical modules",
+        alt: "Interactive clinical learning module mockups",
+      },
+      {
+        src: figmaImages.elearning,
+        position: "center 52%",
+        caption: "Scenario-based training across devices",
+        alt: "Scenario-based eLearning module displayed across devices",
+      },
+      {
+        src: figmaImages.elearning,
+        position: "center 74%",
+        caption: "Custom module content and assessments",
+        alt: "Custom eLearning module and assessment screens",
+      },
+      {
+        src: figmaImages.elearning,
+        position: "center bottom",
+        caption: "Course materials and knowledge checks",
+        alt: "Course materials and knowledge check examples",
+      },
+    ],
     kicker: "OUR SOLUTIONS: eLEARNING",
     headline: "Innovative solutions for every field training need.",
     short:
@@ -182,6 +215,37 @@ const leadership = {
     "This program is ideally designed for high-potential life science individuals and leaders who are seeking professional development opportunities to enhance their business acumen, professional development, and leadership skills. Some of the topics offered include business models and metrics, innovation, financial acumen, leadership, and diversity, equity, and inclusion.",
   ],
 };
+
+const companyValues = [
+  {
+    title: "Action",
+    text: "We are always ready to act. As proactive self-starters, we embody readiness in every fiber of our being and thrive on surpassing expectations. We welcome new challenges and ventures with unwavering enthusiasm.",
+  },
+  {
+    title: "Respect & Kindness",
+    text: "We respect ourselves, each other, our clients, and our vendor partners.",
+  },
+  {
+    title: "Deliver",
+    text: "We make things happen. We have a reputation for delivering: every time, on time, and within budget.",
+  },
+  {
+    title: "High Standards",
+    text: "We pursue excellence in understanding, anticipating, and fulfilling each client's unique needs. We are genuinely interested in our clients and passionate about helping them achieve their goals.",
+  },
+  {
+    title: "Bold",
+    text: "We embrace a culture of empowerment and strive for greatness, endlessly pursuing boldness and innovation while upholding the highest standards of integrity and humility.",
+  },
+  {
+    title: "Inclusive",
+    text: "We value diversity and inclusion. We believe in empowering our team to harness their unique perspectives and talents, recognizing that our collective strength is derived from our diverse experiences.",
+  },
+  {
+    title: "Innovative",
+    text: "We are relentless in our pursuit of continuous improvement and innovation. We seek opportunities to grow and evolve our products, services, and internal processes to serve our clients better. We stay ahead of industry best practices and strive to learn new ways to achieve better results.",
+  },
+];
 
 const team = [
   {
@@ -554,6 +618,37 @@ function renderIcon(item, variant = "default") {
   `;
 }
 
+function renderGallery(item) {
+  if (!item.gallery || !item.gallery.length) return "";
+
+  const carouselId = `${item.id}-gallery`;
+  return `
+    <div class="asset-carousel" aria-label="${escapeHtml(item.galleryTitle || `${item.title} gallery`)}">
+      <div class="carousel-heading">
+        <h3>${escapeHtml(item.galleryTitle || "Examples")}</h3>
+        <div class="carousel-controls">
+          <button class="carousel-control" type="button" data-carousel-control="prev" aria-controls="${carouselId}">Previous</button>
+          <button class="carousel-control" type="button" data-carousel-control="next" aria-controls="${carouselId}">Next</button>
+        </div>
+      </div>
+      <div class="carousel-shell" data-carousel="${carouselId}">
+        <div class="carousel-track" id="${carouselId}" tabindex="0">
+          ${item.gallery
+            .map(
+              (slide) => `
+                <figure class="carousel-slide">
+                  <img src="${slide.src}" alt="${escapeHtml(slide.alt || slide.caption || item.title)}" style="--slide-position: ${escapeHtml(slide.position || "center center")}" loading="lazy" />
+                  <figcaption>${escapeHtml(slide.caption || item.title)}</figcaption>
+                </figure>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
 function renderNav() {
   const nav = document.getElementById("nav-menu");
   nav.innerHTML = navGroups
@@ -784,6 +879,7 @@ function renderDetail(item) {
         <article class="prose">
           <h2>${escapeHtml(item.title)}</h2>
           ${paragraphs(item.body)}
+          ${renderGallery(item)}
           ${
             item.video
               ? `<div class="inline-media"><video class="asset-video" controls preload="metadata" playsinline><source src="${item.video}" type="video/mp4" /></video></div>`
@@ -825,9 +921,27 @@ function renderLeadership() {
 function renderAbout() {
   return `
     ${renderHeader("ABOUT US", "We consistently earn high marks for the caliber of our work, our thorough understanding of the life sciences marketplace, and the passionate and positive attitude with which we approach every project.")}
-    <section class="section compact">
+    <section class="section compact values-section">
       <div class="container">
-        <img class="wide-asset" src="${figmaImages.wordCloud}" alt="Illuminate values word cloud from the Figma design" />
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Our Values</p>
+            <h2>The principles that guide how we work.</h2>
+          </div>
+          <span class="rule" aria-hidden="true"></span>
+        </div>
+        <div class="values-grid">
+          ${companyValues
+            .map(
+              (value) => `
+                <article class="value-card">
+                  <h3>${escapeHtml(value.title)}</h3>
+                  <p>${escapeHtml(value.text)}</p>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
       </div>
     </section>
     <section class="section">
@@ -1057,6 +1171,15 @@ function closeTeamModal() {
   activeTeamTrigger = null;
 }
 
+function scrollCarousel(button) {
+  const track = document.getElementById(button.getAttribute("aria-controls"));
+  if (!track) return;
+
+  const direction = button.dataset.carouselControl === "prev" ? -1 : 1;
+  const distance = Math.max(track.clientWidth * 0.86, 260);
+  track.scrollBy({ left: direction * distance, behavior: "smooth" });
+}
+
 function renderRoute() {
   const path = canonicalPath(currentPath());
   const app = document.getElementById("app");
@@ -1094,6 +1217,12 @@ function init() {
     const teamButton = event.target.closest("[data-team-index]");
     if (teamButton) {
       openTeamModal(Number(teamButton.dataset.teamIndex));
+      return;
+    }
+
+    const carouselButton = event.target.closest("[data-carousel-control]");
+    if (carouselButton) {
+      scrollCarousel(carouselButton);
       return;
     }
 
