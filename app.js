@@ -6,6 +6,13 @@ const figmaImages = {
   elearning: "assets/figma/eLearning.png",
   workshop: "assets/figma/Workshop.png",
   elearningMockups: "assets/figma/e-learning-mockups.png",
+  elearningCarousel: [
+    "assets/figma/elearning-carousel-1.png",
+    "assets/figma/elearning-carousel-2.png",
+    "assets/figma/elearning-carousel-3.png",
+    "assets/figma/elearning-carousel-4.png",
+    "assets/figma/elearning-carousel-5.png",
+  ],
   productLaunchCard: "assets/figma/frame-45-product-launches.png",
   platforms: "assets/figma/variety-of-platforms.png",
   wordCloud: "assets/figma/word-cloud.png",
@@ -50,37 +57,32 @@ const solutions = [
     icon: "eL",
     iconImage: figmaImages.icons.foundational,
     detailIcon: figmaImages.icons.foundationalBlue,
-    image: figmaImages.elearningMockups,
+    image: null,
     video: figmaVideos.elearningDemo,
     galleryTitle: "eLearning examples",
     gallery: [
       {
-        src: figmaImages.elearning,
-        position: "center top",
+        src: figmaImages.elearningCarousel[0],
         caption: "Responsive eLearning course experiences",
         alt: "eLearning course examples across laptop, tablet, and phone",
       },
       {
-        src: figmaImages.elearning,
-        position: "center 28%",
+        src: figmaImages.elearningCarousel[1],
         caption: "Interactive science and clinical modules",
         alt: "Interactive clinical learning module mockups",
       },
       {
-        src: figmaImages.elearning,
-        position: "center 52%",
+        src: figmaImages.elearningCarousel[2],
         caption: "Scenario-based training across devices",
         alt: "Scenario-based eLearning module displayed across devices",
       },
       {
-        src: figmaImages.elearning,
-        position: "center 74%",
+        src: figmaImages.elearningCarousel[3],
         caption: "Custom module content and assessments",
         alt: "Custom eLearning module and assessment screens",
       },
       {
-        src: figmaImages.elearning,
-        position: "center bottom",
+        src: figmaImages.elearningCarousel[4],
         caption: "Course materials and knowledge checks",
         alt: "Course materials and knowledge check examples",
       },
@@ -626,24 +628,22 @@ function renderGallery(item) {
     <div class="asset-carousel" aria-label="${escapeHtml(item.galleryTitle || `${item.title} gallery`)}">
       <div class="carousel-heading">
         <h3>${escapeHtml(item.galleryTitle || "Examples")}</h3>
-        <div class="carousel-controls">
-          <button class="carousel-control" type="button" data-carousel-control="prev" aria-controls="${carouselId}">Previous</button>
-          <button class="carousel-control" type="button" data-carousel-control="next" aria-controls="${carouselId}">Next</button>
-        </div>
       </div>
       <div class="carousel-shell" data-carousel="${carouselId}">
+        <button class="carousel-control carousel-control-prev" type="button" data-carousel-control="prev" aria-controls="${carouselId}" aria-label="Previous slide">&lt;</button>
         <div class="carousel-track" id="${carouselId}" tabindex="0">
           ${item.gallery
             .map(
               (slide) => `
                 <figure class="carousel-slide">
-                  <img src="${slide.src}" alt="${escapeHtml(slide.alt || slide.caption || item.title)}" style="--slide-position: ${escapeHtml(slide.position || "center center")}" loading="lazy" />
+                  <img src="${slide.src}" alt="${escapeHtml(slide.alt || slide.caption || item.title)}" loading="lazy" />
                   <figcaption>${escapeHtml(slide.caption || item.title)}</figcaption>
                 </figure>
               `
             )
             .join("")}
         </div>
+        <button class="carousel-control carousel-control-next" type="button" data-carousel-control="next" aria-controls="${carouselId}" aria-label="Next slide">&gt;</button>
       </div>
     </div>
   `;
@@ -1142,6 +1142,7 @@ function renderNotFound() {
 }
 
 let activeTeamTrigger = null;
+let carouselTimers = [];
 
 function openTeamModal(index) {
   const member = team[index];
@@ -1171,13 +1172,45 @@ function closeTeamModal() {
   activeTeamTrigger = null;
 }
 
-function scrollCarousel(button) {
-  const track = document.getElementById(button.getAttribute("aria-controls"));
-  if (!track) return;
+function clearCarouselTimers() {
+  carouselTimers.forEach((timer) => window.clearInterval(timer));
+  carouselTimers = [];
+}
 
+function moveCarousel(shell, direction) {
+  const track = shell?.querySelector(".carousel-track");
+  const slides = track ? Array.from(track.querySelectorAll(".carousel-slide")) : [];
+  if (!track || slides.length < 2) return;
+
+  const currentIndex = Number(shell.dataset.slideIndex || 0);
+  const nextIndex = (currentIndex + direction + slides.length) % slides.length;
+  shell.dataset.slideIndex = String(nextIndex);
+  track.scrollTo({ left: nextIndex * track.clientWidth, behavior: "smooth" });
+}
+
+function startCarousel(shell) {
+  const track = shell?.querySelector(".carousel-track");
+  if (!track || track.querySelectorAll(".carousel-slide").length < 2) return;
+
+  if (shell.dataset.timerId) window.clearInterval(Number(shell.dataset.timerId));
+  const timer = window.setInterval(() => moveCarousel(shell, 1), 5000);
+  shell.dataset.timerId = String(timer);
+  carouselTimers.push(timer);
+}
+
+function initCarousels() {
+  clearCarouselTimers();
+  document.querySelectorAll("[data-carousel]").forEach((shell) => {
+    shell.dataset.slideIndex = "0";
+    startCarousel(shell);
+  });
+}
+
+function scrollCarousel(button) {
+  const shell = button.closest("[data-carousel]");
   const direction = button.dataset.carouselControl === "prev" ? -1 : 1;
-  const distance = Math.max(track.clientWidth * 0.86, 260);
-  track.scrollBy({ left: direction * distance, behavior: "smooth" });
+  moveCarousel(shell, direction);
+  startCarousel(shell);
 }
 
 function renderRoute() {
@@ -1186,6 +1219,7 @@ function renderRoute() {
   const solution = solutions.find((item) => item.route === path);
 
   closeTeamModal();
+  clearCarouselTimers();
 
   if (path === "/") app.innerHTML = renderHome();
   else if (path === "/our-solutions") app.innerHTML = renderSolutionsOverview();
@@ -1200,6 +1234,7 @@ function renderRoute() {
   document.body.classList.remove("menu-open");
   document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
   window.scrollTo({ top: 0, behavior: "instant" });
+  initCarousels();
 }
 
 function init() {
