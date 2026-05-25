@@ -23,6 +23,13 @@ const figmaImages = {
     csExplorer: "assets/brand/product-logos/cs-explorer-logo.png",
     magister: "assets/brand/product-logos/magister-logo.png",
   },
+  clientLogos: {
+    madrigal: "assets/brand/client-logos/madrigal.png",
+    genentech: "assets/brand/client-logos/genentech.png",
+    gilead: "assets/brand/client-logos/gilead.png",
+    pfizer: "assets/brand/client-logos/pfizer.png",
+    moderna: "assets/brand/client-logos/moderna.png",
+  },
   icons: {
     productLaunch: "assets/figma/component-13-product-launches.png",
     nationalMeetings: "assets/figma/component-14-national-meetings.png",
@@ -45,7 +52,13 @@ const figmaVideos = {
   workshopPresentation: "assets/video/workshop-presentation-video-v3.mp4",
 };
 
-const partnerLogos = ["Madrigal", "Genentech", "Gilead", "Pfizer", "moderna"];
+const clientLogos = [
+  { name: "Madrigal Pharmaceuticals", src: figmaImages.clientLogos.madrigal, className: "client-logo-madrigal" },
+  { name: "Genentech", src: figmaImages.clientLogos.genentech, className: "client-logo-genentech" },
+  { name: "Gilead", src: figmaImages.clientLogos.gilead, className: "client-logo-gilead" },
+  { name: "Pfizer", src: figmaImages.clientLogos.pfizer, className: "client-logo-pfizer" },
+  { name: "Moderna", src: figmaImages.clientLogos.moderna, className: "client-logo-moderna" },
+];
 
 const contact = {
   address: ["477 Harrison Avenue", "Suite 2B", "Boston, MA 02118"],
@@ -767,6 +780,56 @@ function renderHomeSolutionCard(item) {
   `;
 }
 
+function renderClientLogoShowcase() {
+  return `
+    <div class="client-logo-showcase" aria-label="Client logos from the Figma design">
+      <div class="client-logo-grid">
+        ${clientLogos
+          .map(
+            (client) => `
+              <span class="client-logo-tile ${client.className}">
+                <img src="${client.src}" alt="${escapeHtml(client.name)}" />
+              </span>
+            `
+          )
+          .join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderIbotSpotlight() {
+  return `
+    <section class="section ibot-section">
+      <div class="container ibot-grid">
+        <div class="ibot-copy">
+          <p class="eyebrow">AI learning support</p>
+          <h2>Meet iBot, Illuminate’s custom AI chatbot for life sciences training.</h2>
+          <p>iBot supports learners by answering questions and clarifying approved training content in real time. It gives field teams a guided way to revisit key concepts, reinforce understanding, and stay engaged between formal learning moments.</p>
+          <div class="actions">
+            <a class="button" href="#/contact">Explore iBot</a>
+          </div>
+        </div>
+        <div class="ibot-visual" aria-label="iBot chatbot interface preview">
+          <div class="ibot-window">
+            <div class="ibot-window-top">
+              <span class="ibot-logo-mark">i</span>
+              <strong>iBot</strong>
+              <span>Live learning support</span>
+            </div>
+            <div class="ibot-message ibot-message-question">Can you clarify this key concept?</div>
+            <div class="ibot-message ibot-message-answer">Here’s the approved explanation, with the clinical takeaway highlighted.</div>
+            <div class="ibot-prompt-row">
+              <span>Ask about training content</span>
+              <b>&gt;</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function renderHome() {
   return `
     <section class="hero">
@@ -841,13 +904,11 @@ function renderHome() {
       </div>
     </section>
 
+    ${renderIbotSpotlight()}
+
     <section class="section soft">
       <div class="container split-grid">
-        <div class="client-orbit" aria-label="Client logos from the Figma design">
-          ${partnerLogos
-            .map((name) => `<span class="logo-bubble">${escapeHtml(name)}</span>`)
-            .join("")}
-        </div>
+        ${renderClientLogoShowcase()}
         <div class="split-copy">
           <p class="eyebrow">Partners</p>
           <h2>Illuminate is a proud partner of life sciences field training and development leaders.</h2>
@@ -1110,11 +1171,7 @@ function renderPartners() {
     ${renderHeader("PARTNERS", "Illuminate is a proud partner of the following life sciences field training and development leaders.")}
     <section class="section">
       <div class="container split-grid">
-        <div class="client-orbit" aria-label="Client logos from the Figma design">
-          ${partnerLogos
-            .map((name) => `<span class="logo-bubble">${escapeHtml(name)}</span>`)
-            .join("")}
-        </div>
+        ${renderClientLogoShowcase()}
         <article class="prose">
           <h2>Clients</h2>
           <p>Illuminate is a proud partner of the following life sciences field training and development leaders.</p>

@@ -954,38 +954,203 @@ h3 {
   color: var(--muted);
 }
 
-.client-orbit {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  align-items: center;
-  justify-items: center;
+.client-logo-showcase {
   min-height: 440px;
-  padding: 40px;
+  padding: 34px;
+  border: 1px solid #ccecf4;
   border-radius: 8px;
+  background: linear-gradient(135deg, #eaf9fc 0%, #ffffff 70%);
+  box-shadow: 0 18px 44px rgba(0, 45, 70, 0.08);
+}
+
+.client-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 154px;
+  gap: 18px;
+  min-height: 326px;
+}
+
+.client-logo-tile {
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  border: 1px solid rgba(10, 160, 227, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 28px rgba(0, 45, 70, 0.08);
+}
+
+.client-logo-tile img {
+  display: block;
+  max-width: 100%;
+  max-height: 78px;
+  object-fit: contain;
+}
+
+.client-logo-madrigal {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.client-logo-genentech {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}
+
+.client-logo-gilead {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.client-logo-pfizer {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.client-logo-moderna {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.client-logo-genentech img,
+.client-logo-gilead img {
+  max-height: 96px;
+}
+
+.client-logo-pfizer img {
+  max-height: 60px;
+}
+
+.client-logo-moderna img {
+  max-height: 116px;
+}
+
+.ibot-section {
+  background: linear-gradient(180deg, #ffffff 0%, #eefaff 100%);
+}
+
+.ibot-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+  gap: 54px;
+  align-items: center;
+}
+
+.ibot-copy h2 {
+  max-width: 780px;
+  color: var(--blue);
+  font-size: 46px;
+  line-height: 1.14;
+}
+
+.ibot-copy p:not(.eyebrow) {
+  max-width: 740px;
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 22px;
+}
+
+.ibot-visual {
+  display: grid;
+  min-height: 436px;
+  place-items: center;
+  padding: 42px;
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 206, 0, 0.18), rgba(255, 255, 255, 0) 38%),
+    linear-gradient(135deg, #08a6df 0%, #d8f6fb 100%);
+  box-shadow: 0 24px 54px rgba(0, 45, 70, 0.14);
+}
+
+.ibot-window {
+  width: min(100%, 530px);
+  padding: 24px;
+  border: 1px solid rgba(0, 45, 70, 0.1);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: 0 24px 48px rgba(0, 45, 70, 0.18);
+}
+
+.ibot-window-top {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  column-gap: 14px;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.ibot-window-top strong {
+  color: var(--blue-strong);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ibot-window-top span:last-child {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.ibot-logo-mark {
+  display: grid;
+  grid-row: 1 / 3;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  color: var(--white);
+  background: var(--blue);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ibot-message {
+  max-width: 84%;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.ibot-message-question {
+  margin-left: auto;
+  color: var(--white);
+  background: var(--blue-strong);
+}
+
+.ibot-message-answer {
+  color: var(--ink);
   background: var(--blue-soft);
 }
 
-.logo-bubble {
-  display: grid;
-  place-items: center;
-  width: 190px;
-  height: 190px;
-  padding: 26px;
-  border-radius: 999px;
-  color: var(--blue-strong);
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 16px 34px rgba(0, 45, 70, 0.08);
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  text-align: center;
+.ibot-prompt-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 26px;
+  padding: 14px 16px;
+  border: 1px solid #b8dde8;
+  border-radius: 8px;
+  color: var(--muted);
+  background: #f7fcfe;
 }
 
-.logo-bubble:nth-child(2),
-.logo-bubble:nth-child(5) {
-  width: 136px;
-  height: 136px;
+.ibot-prompt-row b {
+  display: grid;
+  flex: 0 0 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--white);
+  background: var(--blue);
+  font-size: 20px;
 }
 
 .cards-grid {
@@ -1639,6 +1804,7 @@ h3 {
 
   .feature-grid,
   .split-grid,
+  .ibot-grid,
   .solution-detail-grid,
   .contact-layout {
     grid-template-columns: 1fr;
@@ -1659,6 +1825,10 @@ h3 {
 
   .award-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ibot-copy h2 {
+    font-size: 40px;
   }
 }
 
@@ -1797,6 +1967,72 @@ h3 {
 
   .solution-overview-copy span:not(.solution-overview-type) {
     font-size: 16px;
+  }
+
+  .client-logo-showcase {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .client-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 92px;
+    min-height: 0;
+    gap: 12px;
+  }
+
+  .client-logo-madrigal,
+  .client-logo-genentech,
+  .client-logo-gilead,
+  .client-logo-pfizer,
+  .client-logo-moderna {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .client-logo-genentech,
+  .client-logo-gilead {
+    grid-column: 1 / -1;
+  }
+
+  .client-logo-tile {
+    padding: 12px;
+  }
+
+  .client-logo-tile img,
+  .client-logo-genentech img,
+  .client-logo-gilead img,
+  .client-logo-moderna img {
+    max-height: 62px;
+  }
+
+  .client-logo-pfizer img {
+    max-height: 42px;
+  }
+
+  .ibot-grid {
+    gap: 30px;
+  }
+
+  .ibot-copy h2 {
+    font-size: 32px;
+  }
+
+  .ibot-copy p:not(.eyebrow) {
+    font-size: 18px;
+  }
+
+  .ibot-visual {
+    min-height: 0;
+    padding: 18px;
+  }
+
+  .ibot-window {
+    padding: 18px;
+  }
+
+  .ibot-message {
+    max-width: 100%;
   }
 
   .icon-orb {
