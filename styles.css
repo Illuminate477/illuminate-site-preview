@@ -169,6 +169,13 @@ img {
   transform: translateY(0);
 }
 
+.nav-item.is-dropdown-dismissed .dropdown {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+}
+
 .dropdown a {
   display: block;
   padding: 12px 18px;
@@ -424,14 +431,117 @@ h3 {
   position: relative;
   z-index: 4;
   margin-top: -72px;
-  padding: 32px 0 50px;
-  background: linear-gradient(180deg, #ffffff 0%, #b9edff 100%);
+  padding: 40px 0 58px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4fcff 56%, #dff6ff 100%);
 }
 
 .icon-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 24px;
+}
+
+.solutions-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.solution-overview-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 20px;
+  min-height: 238px;
+  align-items: start;
+  overflow: hidden;
+  padding: 24px;
+  border: 1px solid rgba(10, 160, 227, 0.18);
+  border-radius: 8px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 16px 38px rgba(0, 45, 70, 0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.solution-overview-card::before {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 6px;
+  content: "";
+  background: var(--yellow);
+}
+
+.solution-overview-card:hover,
+.solution-overview-card:focus-visible {
+  border-color: rgba(10, 160, 227, 0.4);
+  box-shadow: 0 22px 46px rgba(0, 45, 70, 0.12);
+  outline: none;
+  transform: translateY(-3px);
+}
+
+.solution-overview-icon {
+  display: grid;
+  place-items: center;
+}
+
+.solution-overview-card .figma-icon {
+  overflow: hidden;
+  width: 112px;
+  height: 112px;
+  border-radius: 999px;
+  background: rgba(233, 251, 255, 0.92);
+  box-shadow: inset 0 0 18px rgba(10, 160, 227, 0.12);
+}
+
+.solution-overview-card .figma-icon img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: 50% 0%;
+  transform: scale(1.55);
+  transform-origin: 50% 8%;
+}
+
+.solution-overview-copy {
+  display: grid;
+  gap: 9px;
+}
+
+.solution-overview-type {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--blue-strong);
+  background: var(--blue-soft);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.solution-overview-copy strong {
+  color: var(--blue);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 24px;
+  line-height: 1.12;
+}
+
+.solution-overview-copy span:not(.solution-overview-type) {
+  color: var(--text);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.solution-overview-copy em {
+  margin-top: 4px;
+  color: var(--blue-strong);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .icon-card {
@@ -1495,6 +1605,10 @@ h3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .solutions-overview-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .feature-grid,
   .split-grid,
   .solution-detail-grid,
@@ -1603,6 +1717,7 @@ h3 {
   }
 
   .icon-grid,
+  .solutions-overview-grid,
   .cards-grid,
   .team-grid,
   .values-grid,
@@ -1621,6 +1736,26 @@ h3 {
 
   .icon-card {
     min-height: 132px;
+  }
+
+  .solution-overview-card {
+    grid-template-columns: 86px minmax(0, 1fr);
+    gap: 16px;
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .solution-overview-card .figma-icon {
+    width: 86px;
+    height: 86px;
+  }
+
+  .solution-overview-copy strong {
+    font-size: 21px;
+  }
+
+  .solution-overview-copy span:not(.solution-overview-type) {
+    font-size: 16px;
   }
 
   .icon-orb {

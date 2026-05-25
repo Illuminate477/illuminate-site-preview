@@ -735,6 +735,22 @@ function renderSolutionCard(item) {
   `;
 }
 
+function renderHomeSolutionCard(item) {
+  const actionLabel = item.type === "Product" ? "View Product" : "View Service";
+
+  return `
+    <a class="solution-overview-card" href="${pathToHash(item.route)}">
+      <span class="solution-overview-icon">${renderIcon(item)}</span>
+      <span class="solution-overview-copy">
+        <span class="solution-overview-type">${escapeHtml(item.type)}</span>
+        <strong>${escapeHtml(item.navTitle)}</strong>
+        <span>${escapeHtml(item.short)}</span>
+        <em>${actionLabel}</em>
+      </span>
+    </a>
+  `;
+}
+
 function renderHome() {
   return `
     <section class="hero">
@@ -768,17 +784,8 @@ function renderHome() {
           </div>
           <span class="rule" aria-hidden="true"></span>
         </div>
-        <div class="icon-grid">
-          ${solutions
-            .map(
-              (item) => `
-                <a class="icon-card" href="${pathToHash(item.route)}">
-                  ${renderIcon(item)}
-                  <strong>${escapeHtml(item.navTitle)}</strong>
-                </a>
-              `
-            )
-            .join("")}
+        <div class="solutions-overview-grid">
+          ${solutions.map(renderHomeSolutionCard).join("")}
         </div>
       </div>
     </section>
@@ -1254,6 +1261,20 @@ function init() {
   renderNav();
   renderRoute();
 
+  const navMenu = document.getElementById("nav-menu");
+
+  function clearDismissedDropdowns() {
+    document.querySelectorAll(".nav-item.is-dropdown-dismissed").forEach((item) => {
+      item.classList.remove("is-dropdown-dismissed");
+    });
+  }
+
+  navMenu?.addEventListener("pointerleave", clearDismissedDropdowns);
+  navMenu?.addEventListener("focusin", (event) => {
+    const trigger = event.target.closest(".nav-trigger");
+    if (trigger) trigger.closest(".nav-item")?.classList.remove("is-dropdown-dismissed");
+  });
+
   document.querySelector(".menu-toggle").addEventListener("click", (event) => {
     const expanded = event.currentTarget.getAttribute("aria-expanded") === "true";
     event.currentTarget.setAttribute("aria-expanded", String(!expanded));
@@ -1261,6 +1282,12 @@ function init() {
   });
 
   document.addEventListener("click", (event) => {
+    const navTrigger = event.target.closest(".nav-trigger");
+    if (navTrigger) {
+      navTrigger.closest(".nav-item")?.classList.remove("is-dropdown-dismissed");
+      return;
+    }
+
     const teamButton = event.target.closest("[data-team-index]");
     if (teamButton) {
       openTeamModal(Number(teamButton.dataset.teamIndex));
@@ -1282,6 +1309,10 @@ function init() {
     if (link) {
       document.body.classList.remove("menu-open");
       document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
+      if (link.closest(".dropdown")) {
+        link.closest(".nav-item")?.classList.add("is-dropdown-dismissed");
+        link.blur();
+      }
     }
   });
 
