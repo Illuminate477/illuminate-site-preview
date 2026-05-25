@@ -885,15 +885,11 @@ function renderDetail(item) {
     ${renderHeader(item.kicker, item.headline)}
     <section class="section solution-detail">
       <div class="container">
+        <div class="solution-cta-row">
+          <a class="button solution-cta-tab" href="#/contact">Get Started</a>
+        </div>
         <div class="solution-detail-grid ${item.image ? "" : "solution-detail-grid-full"}">
           <article class="prose solution-copy">
-            <div class="solution-title-row">
-              <div>
-                <p class="eyebrow">${escapeHtml(item.type)}</p>
-                <h2>${escapeHtml(item.title)}</h2>
-              </div>
-              <a class="button solution-cta-tab" href="#/contact">Get Started</a>
-            </div>
           ${paragraphs(item.body)}
           ${item.closing ? `<p class="solution-closing">${escapeHtml(item.closing)}</p>` : ""}
           ${item.bullets ? `<h3>${escapeHtml(item.bulletsTitle)}</h3><ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>` : ""}

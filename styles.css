@@ -1094,25 +1094,14 @@ h3 {
   grid-template-columns: minmax(0, 980px);
 }
 
-.solution-title-row {
+.solution-cta-row {
   display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.solution-title-row .eyebrow {
-  margin: 0 0 8px;
-}
-
-.solution-title-row h2 {
-  margin-bottom: 0;
+  justify-content: center;
+  margin: -8px 0 42px;
 }
 
 .solution-cta-tab {
   flex: 0 0 auto;
-  margin-top: 6px;
 }
 
 .solution-media {
@@ -1775,12 +1764,8 @@ h3 {
     height: 190px;
   }
 
-  .solution-title-row {
-    display: block;
-  }
-
   .solution-cta-tab {
-    margin-top: 18px;
+    margin-top: 0;
   }
 
   .solution-media .asset-image {
