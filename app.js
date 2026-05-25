@@ -199,6 +199,7 @@ const solutions = [
       "This facilitates the production of virtually any type of course, assessment, survey, event, and documentation asset, thereby meeting a range of organizational needs.",
       "Finally, Magister’s unique design and implementation make the platform a rare type of solution that can serve organizations of any size and seamlessly grow with each client, from small, vertical businesses to large, worldwide corporations.",
     ],
+    closing: "Experience Illuminate. Experience Magister®.",
     external: { label: "Experience Magister®", href: "https://magisterlms.com/" },
   },
 ];
@@ -646,6 +647,16 @@ function renderGallery(item) {
   `;
 }
 
+function renderDetailMedia(item) {
+  if (!item.image) return "";
+
+  return `
+    <figure class="solution-media">
+      <img class="asset-image" src="${item.image}" alt="${escapeHtml(item.title)} visual" />
+    </figure>
+  `;
+}
+
 function renderNav() {
   const nav = document.getElementById("nav-menu");
   nav.innerHTML = navGroups
@@ -865,34 +876,34 @@ function renderSolutionsOverview() {
 function renderDetail(item) {
   return `
     ${renderHeader(item.kicker, item.headline)}
-    <section class="section">
-      <div class="container detail-layout">
-        <aside class="detail-visual">
-          ${
-            item.detailVisualImage
-              ? `<img class="detail-visual-image" src="${item.detailVisualImage}" alt="${escapeHtml(item.title)} visual" />`
-              : renderIcon(item, "detail")
-          }
-          <h2>${escapeHtml(item.title)}</h2>
-          ${item.image ? `<div class="detail-image"><img class="asset-image" src="${item.image}" alt="${escapeHtml(item.title)} visual" /></div>` : ""}
-          <a class="button" href="#/contact">Get Started</a>
-        </aside>
-        <article class="prose">
-          <h2>${escapeHtml(item.title)}</h2>
+    <section class="section solution-detail">
+      <div class="container">
+        <div class="solution-detail-grid ${item.image ? "" : "solution-detail-grid-full"}">
+          <article class="prose solution-copy">
+            <div class="solution-title-row">
+              <div>
+                <p class="eyebrow">${escapeHtml(item.type)}</p>
+                <h2>${escapeHtml(item.title)}</h2>
+              </div>
+              <a class="button solution-cta-tab" href="#/contact">Get Started</a>
+            </div>
           ${paragraphs(item.body)}
-          ${renderGallery(item)}
-          ${
-            item.video
-              ? `<div class="inline-media"><video class="asset-video" controls preload="metadata" playsinline><source src="${item.video}" type="video/mp4" /></video></div>`
-              : ""
-          }
+          ${item.closing ? `<p class="solution-closing">${escapeHtml(item.closing)}</p>` : ""}
           ${item.bullets ? `<h3>${escapeHtml(item.bulletsTitle)}</h3><ul>${item.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>` : ""}
           ${
             item.external
-              ? `<p><a class="button secondary" href="${item.external.href}" target="_blank" rel="noreferrer">${item.external.label}</a></p>`
+              ? `<p class="solution-actions"><a class="button secondary" href="${item.external.href}" target="_blank" rel="noreferrer">${item.external.label}</a></p>`
               : ""
           }
-        </article>
+          </article>
+          ${renderDetailMedia(item)}
+        </div>
+        ${renderGallery(item)}
+        ${
+          item.video
+            ? `<div class="inline-media"><video class="asset-video" controls preload="metadata" playsinline><source src="${item.video}" type="video/mp4" /></video></div>`
+            : ""
+        }
       </div>
     </section>
     ${renderFooter()}

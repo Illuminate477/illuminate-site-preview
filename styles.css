@@ -973,6 +973,66 @@ h3 {
   line-height: 1.2;
 }
 
+.solution-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.solution-detail-grid-full {
+  grid-template-columns: minmax(0, 980px);
+}
+
+.solution-title-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.solution-title-row .eyebrow {
+  margin: 0 0 8px;
+}
+
+.solution-title-row h2 {
+  margin-bottom: 0;
+}
+
+.solution-cta-tab {
+  flex: 0 0 auto;
+  margin-top: 6px;
+}
+
+.solution-media {
+  overflow: hidden;
+  margin: 0;
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.solution-media .asset-image {
+  width: 100%;
+  max-height: 560px;
+  min-height: 360px;
+  padding: 18px;
+  background: var(--white);
+  clip-path: inset(4px round 8px);
+  object-fit: contain;
+}
+
+.solution-closing {
+  color: var(--ink);
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 700;
+}
+
+.solution-actions {
+  margin-top: 28px;
+}
+
 .prose h2 {
   margin: 0 0 20px;
   color: var(--blue);
@@ -1437,6 +1497,7 @@ h3 {
 
   .feature-grid,
   .split-grid,
+  .solution-detail-grid,
   .contact-layout {
     grid-template-columns: 1fr;
   }
@@ -1577,6 +1638,19 @@ h3 {
   .detail-visual .detail-icon {
     width: 190px;
     height: 190px;
+  }
+
+  .solution-title-row {
+    display: block;
+  }
+
+  .solution-cta-tab {
+    margin-top: 18px;
+  }
+
+  .solution-media .asset-image {
+    min-height: 260px;
+    padding: 10px;
   }
 
   .asset-video {
