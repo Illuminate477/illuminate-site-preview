@@ -464,6 +464,11 @@ h3 {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
+.solution-overview-card.has-logo {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
 .solution-overview-card::before {
   position: absolute;
   inset: 0 auto 0 0;
@@ -485,6 +490,11 @@ h3 {
   place-items: center;
 }
 
+.solution-overview-card.has-logo .solution-overview-icon {
+  min-height: 74px;
+  justify-items: start;
+}
+
 .solution-overview-card .figma-icon {
   overflow: hidden;
   width: 112px;
@@ -502,6 +512,35 @@ h3 {
   object-position: 50% 0%;
   transform: scale(1.55);
   transform-origin: 50% 8%;
+}
+
+.product-logo-icon {
+  display: flex;
+  width: min(270px, 100%);
+  min-height: 118px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.product-logo-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.solution-overview-card .product-logo-icon {
+  width: min(250px, 100%);
+  min-height: 74px;
+}
+
+.solution-overview-card .product-logo-icon img {
+  max-height: 62px;
+}
+
+.content-card.has-logo .product-logo-icon {
+  align-self: flex-start;
 }
 
 .solution-overview-copy {
@@ -1096,7 +1135,7 @@ h3 {
 
 .solution-cta-row {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin: -8px 0 42px;
 }
 
@@ -1734,9 +1773,22 @@ h3 {
     padding: 20px;
   }
 
+  .solution-overview-card.has-logo {
+    grid-template-columns: 1fr;
+  }
+
   .solution-overview-card .figma-icon {
     width: 86px;
     height: 86px;
+  }
+
+  .solution-overview-card .product-logo-icon {
+    width: min(230px, 100%);
+    min-height: 64px;
+  }
+
+  .solution-overview-card .product-logo-icon img {
+    max-height: 58px;
   }
 
   .solution-overview-copy strong {

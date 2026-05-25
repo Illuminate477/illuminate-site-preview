@@ -18,6 +18,11 @@ const figmaImages = {
   platforms: "assets/figma/variety-of-platforms.png",
   wordCloud: "assets/figma/word-cloud.png",
   sandbox: "assets/figma/sandbox.png",
+  productLogos: {
+    piExplorer: "assets/brand/product-logos/pi-explorer-logo.png",
+    csExplorer: "assets/brand/product-logos/cs-explorer-logo.png",
+    magister: "assets/brand/product-logos/magister-logo.png",
+  },
   icons: {
     productLaunch: "assets/figma/component-13-product-launches.png",
     nationalMeetings: "assets/figma/component-14-national-meetings.png",
@@ -151,6 +156,7 @@ const solutions = [
     icon: "PI",
     iconImage: figmaImages.icons.productLaunch,
     detailIcon: figmaImages.icons.productLaunchBlue,
+    logoImage: figmaImages.productLogos.piExplorer,
     image: figmaImages.pix,
     kicker: "OUR SOLUTIONS: PI EXPLORER",
     headline: "Innovative solutions for every sales training need.",
@@ -169,6 +175,7 @@ const solutions = [
     icon: "CS",
     iconImage: figmaImages.icons.innovations,
     detailIcon: figmaImages.icons.innovationsBlue,
+    logoImage: figmaImages.productLogos.csExplorer,
     image: figmaImages.csx,
     kicker: "OUR SOLUTIONS: Clinical Study Explorer",
     headline: "Innovative solutions for every sales training need.",
@@ -188,6 +195,7 @@ const solutions = [
     icon: "LMS",
     iconImage: figmaImages.icons.rareDisease,
     detailIcon: figmaImages.icons.rareDiseaseBlue,
+    logoImage: figmaImages.productLogos.magister,
     image: figmaImages.elearning,
     kicker: "OUR SOLUTIONS: MAGISTER LMS",
     headline: "Innovative solutions for every field training need.",
@@ -604,6 +612,14 @@ function paragraphs(items) {
 }
 
 function renderIcon(item, variant = "default") {
+  if (item.logoImage) {
+    return `
+      <span class="product-logo-icon" aria-hidden="true">
+        <img src="${item.logoImage}" alt="" />
+      </span>
+    `;
+  }
+
   const src = variant === "detail" && item.detailIcon ? item.detailIcon : item.iconImage;
   if (src) {
     return `
@@ -726,7 +742,7 @@ function renderFooter() {
 
 function renderSolutionCard(item) {
   return `
-    <article class="content-card">
+    <article class="content-card ${item.logoImage ? "has-logo" : ""}">
       ${renderIcon(item)}
       <h3>${escapeHtml(item.title)}</h3>
       <p>${escapeHtml(item.short)}</p>
@@ -739,7 +755,7 @@ function renderHomeSolutionCard(item) {
   const actionLabel = item.type === "Product" ? "View Product" : "View Service";
 
   return `
-    <a class="solution-overview-card" href="${pathToHash(item.route)}">
+    <a class="solution-overview-card ${item.logoImage ? "has-logo" : ""}" href="${pathToHash(item.route)}">
       <span class="solution-overview-icon">${renderIcon(item)}</span>
       <span class="solution-overview-copy">
         <span class="solution-overview-type">${escapeHtml(item.type)}</span>
