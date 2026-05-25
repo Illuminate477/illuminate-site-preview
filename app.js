@@ -18,6 +18,7 @@ const figmaImages = {
   platforms: "assets/figma/variety-of-platforms.png",
   wordCloud: "assets/figma/word-cloud.png",
   sandbox: "assets/figma/sandbox.png",
+  magisterSupport: "assets/figma/magister-white-glove-phone-support.png",
   productLogos: {
     piExplorer: "assets/brand/product-logos/pi-explorer-logo.png",
     csExplorer: "assets/brand/product-logos/cs-explorer-logo.png",
@@ -222,6 +223,14 @@ const solutions = [
     ],
     closing: "Experience Illuminate. Experience Magister®.",
     external: { label: "Experience Magister®", href: "https://magisterlms.com/" },
+    feature: {
+      eyebrow: "White glove support",
+      title: "White Glove Services, Hands-off Approach",
+      image: figmaImages.magisterSupport,
+      alt: "Illuminate team member providing Magister LMS white glove support by phone",
+      body:
+        "Elevate your Magister experience with our white glove concierge service. Enjoy immediate assistance with assignment inquiries, troubleshooting, and a dedicated team that ensures you always receive top-notch service. Illuminate provides white glove service, including our help desk phone center, full roster management, field troubleshooting, assessment validation, report management, and technology troubleshooting.",
+    },
   },
 ];
 
@@ -686,6 +695,23 @@ function renderDetailMedia(item) {
   `;
 }
 
+function renderFeatureHighlight(item) {
+  if (!item.feature) return "";
+
+  return `
+    <section class="solution-feature-highlight">
+      <figure class="solution-feature-visual">
+        <img src="${item.feature.image}" alt="${escapeHtml(item.feature.alt || item.feature.title)}" />
+      </figure>
+      <article class="solution-feature-copy">
+        <p class="eyebrow">${escapeHtml(item.feature.eyebrow || item.type)}</p>
+        <h2>${escapeHtml(item.feature.title)}</h2>
+        <p>${escapeHtml(item.feature.body)}</p>
+      </article>
+    </section>
+  `;
+}
+
 function renderNav() {
   const nav = document.getElementById("nav-menu");
   nav.innerHTML = navGroups
@@ -978,6 +1004,7 @@ function renderDetail(item) {
           </article>
           ${renderDetailMedia(item)}
         </div>
+        ${renderFeatureHighlight(item)}
         ${renderGallery(item)}
         ${
           item.video
