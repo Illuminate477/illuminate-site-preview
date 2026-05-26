@@ -71,6 +71,18 @@ const clientTestimonials = [
   {
     quote: "When you want strategic thinking and creativity packaged in one – that’s the service Illuminate can provide.",
   },
+  {
+    quote: "Illuminate always listens and then responds to the needs of the business to make sure final objectives are accomplished.",
+  },
+  {
+    quote: "I don’t consider Illuminate to be a good vendor, but rather an amazing partner and an integral part of my team.",
+  },
+  {
+    quote: "I highly recommend Illuminate. They listen to the client and approach projects with the end goal at front of mind.",
+  },
+  {
+    quote: "Extremely knowledgeable, very amenable, hard working and just fun people.",
+  },
 ];
 
 const contact = {
@@ -886,16 +898,27 @@ function renderClientTestimonials() {
             <h2>What partners value about working with Illuminate.</h2>
           </div>
         </div>
-        <div class="testimonial-card">
+        <div class="testimonial-card" data-testimonial-carousel>
+          <div class="testimonial-slides">
           ${clientTestimonials
             .map(
-              (testimonial) => `
-                <figure class="testimonial-quote">
+              (testimonial, index) => `
+                <figure class="testimonial-quote ${index === 0 ? "is-active" : ""}" data-testimonial-slide="${index}"${index === 0 ? "" : " hidden"}>
                   <blockquote>${escapeHtml(testimonial.quote)}</blockquote>
                 </figure>
               `
             )
             .join("")}
+          </div>
+          <div class="testimonial-dots" role="tablist" aria-label="Client testimonials">
+            ${clientTestimonials
+              .map(
+                (_testimonial, index) => `
+                  <button class="testimonial-dot ${index === 0 ? "is-active" : ""}" type="button" data-testimonial-index="${index}" role="tab" aria-selected="${index === 0 ? "true" : "false"}" aria-label="Show testimonial ${index + 1}"></button>
+                `
+              )
+              .join("")}
+          </div>
         </div>
       </div>
     </section>
@@ -1451,6 +1474,24 @@ function scrollCarousel(button) {
   startCarousel(shell);
 }
 
+function setTestimonialSlide(shell, index) {
+  const slides = shell ? Array.from(shell.querySelectorAll("[data-testimonial-slide]")) : [];
+  const dots = shell ? Array.from(shell.querySelectorAll("[data-testimonial-index]")) : [];
+  if (!shell || !slides.length || index < 0 || index >= slides.length) return;
+
+  shell.dataset.testimonialIndex = String(index);
+  slides.forEach((slide, slideIndex) => {
+    const isActive = slideIndex === index;
+    slide.hidden = !isActive;
+    slide.classList.toggle("is-active", isActive);
+  });
+  dots.forEach((dot, dotIndex) => {
+    const isActive = dotIndex === index;
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-selected", String(isActive));
+  });
+}
+
 function renderRoute() {
   const path = canonicalPath(currentPath());
   const app = document.getElementById("app");
@@ -1517,6 +1558,12 @@ function init() {
     const carouselButton = event.target.closest("[data-carousel-control]");
     if (carouselButton) {
       scrollCarousel(carouselButton);
+      return;
+    }
+
+    const testimonialButton = event.target.closest("[data-testimonial-index]");
+    if (testimonialButton) {
+      setTestimonialSlide(testimonialButton.closest("[data-testimonial-carousel]"), Number(testimonialButton.dataset.testimonialIndex));
       return;
     }
 
