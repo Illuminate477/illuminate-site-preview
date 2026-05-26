@@ -1177,7 +1177,6 @@ function renderAbout() {
       <div class="container">
         <div class="section-head">
           <div>
-            <p class="eyebrow">Our Team</p>
             <h2>Our Team</h2>
           </div>
           <span class="rule" aria-hidden="true"></span>
