@@ -1482,7 +1482,7 @@ h3 {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 38px 30px;
 }
 
@@ -1490,6 +1490,7 @@ h3 {
   display: grid;
   justify-items: center;
   gap: 16px;
+  min-width: 0;
   text-align: center;
 }
 
@@ -1527,6 +1528,7 @@ h3 {
   font-size: 48px;
   font-weight: 700;
   object-fit: cover;
+  object-position: 50% 18%;
   transition: outline 160ms ease, transform 160ms ease;
 }
 
@@ -1608,6 +1610,7 @@ h3 {
   outline: 4px solid rgba(246, 185, 18, 0.22);
   outline-offset: 4px;
   object-fit: cover;
+  object-position: 50% 18%;
   box-shadow: var(--shadow);
 }
 

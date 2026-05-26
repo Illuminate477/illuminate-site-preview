@@ -411,6 +411,32 @@ const team = [
   },
 ];
 
+const teamDisplayOrder = [
+  "Shaun McMahon",
+  "Faridon Dadrass",
+  "Juan Carlos Pinedo",
+  "Carly Commiso",
+  "Ryan Hoke",
+  "Maria Bocanegra",
+  "Daniel Goldsmith",
+  "Kara Fitzgibbon",
+  "Sarah Looney",
+  "Farheen Shaikh",
+  "Nathanael Otañez",
+  "Mason Jones",
+  "Mike Miedzianowski",
+  "Janiel Rosario",
+  "Lauren McNally",
+  "Kristian Dawes",
+  "William Hwang",
+  "Vrushali Nar",
+  "Prasanna Ranade",
+  "Rich Daley",
+];
+
+const teamDisplayRank = new Map(teamDisplayOrder.map((name, index) => [name, index]));
+team.sort((a, b) => (teamDisplayRank.get(a.name) ?? 999) - (teamDisplayRank.get(b.name) ?? 999));
+
 const news = [
   {
     date: "February 28, 2024",
