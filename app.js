@@ -390,7 +390,7 @@ const team = [
   {
     name: "Vrushali Nar",
     title: "eLearning Developer",
-    image: "assets/team/vrushali-nar.jpg",
+    image: "assets/team/vrushali-nar-headshot-20260526.jpg",
     bio: "With over a decade of experience in eLearning development, Vrushali designs impactful, learner-focused training solutions that drive engagement and retention. She is highly skilled in a wide range of authoring tools and has a proven track record in developing instructor-led, virtual, and blended learning programs. Vrushali combines creativity with instructional design best practices to deliver meaningful learning experiences tailored to life sciences field teams.",
   },
   {
