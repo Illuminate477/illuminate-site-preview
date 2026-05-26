@@ -275,31 +275,45 @@ const leadership = {
 const companyValues = [
   {
     title: "Action",
-    text: "We are always ready to act. As proactive self-starters, we embody readiness in every fiber of our being and thrive on surpassing expectations. We welcome new challenges and ventures with unwavering enthusiasm.",
+    points: [
+      "We are always ready to act.",
+      "As proactive self-starters, we embody readiness in every fiber of our being and thrive on surpassing expectations.",
+    ],
   },
   {
     title: "Respect & Kindness",
-    text: "We respect ourselves, each other, our clients, and our vendor partners.",
+    points: ["We respect ourselves, each other, our clients, and our vendor partners."],
   },
   {
     title: "Deliver",
-    text: "We make things happen. We have a reputation for delivering: every time, on time, and within budget.",
+    points: ["We make things happen. We have a reputation for delivering: every time, on time, and within budget."],
   },
   {
-    title: "High Standards",
-    text: "We pursue excellence in understanding, anticipating, and fulfilling each client's unique needs. We are genuinely interested in our clients and passionate about helping them achieve their goals.",
+    title: "Client-centric",
+    points: [
+      "We pursue excellence in understanding, anticipating, and fulfilling each client's unique needs.",
+      "We are genuinely interested in our clients and passionate about helping them achieve their goals.",
+    ],
   },
   {
     title: "Bold",
-    text: "We embrace a culture of empowerment and strive for greatness, endlessly pursuing boldness and innovation while upholding the highest standards of integrity and humility.",
+    points: [
+      "We embrace a culture of empowerment and strive for greatness, endlessly pursuing boldness and innovation while upholding the highest standards of integrity and humility.",
+    ],
   },
   {
     title: "Inclusive",
-    text: "We value diversity and inclusion. We believe in empowering our team to harness their unique perspectives and talents, recognizing that our collective strength is derived from our diverse experiences.",
+    points: [
+      "We value diversity and inclusion.",
+      "We believe in empowering our team to harness their unique perspectives and talents, recognizing that our collective strength is derived from our diverse experiences.",
+    ],
   },
   {
-    title: "Innovative",
-    text: "We are relentless in our pursuit of continuous improvement and innovation. We seek opportunities to grow and evolve our products, services, and internal processes to serve our clients better. We stay ahead of industry best practices and strive to learn new ways to achieve better results.",
+    title: "Continuous Improvement",
+    points: [
+      "We are relentless in our pursuit of continuous improvement and innovation.",
+      "We seek opportunities to grow and evolve our products, services, and internal processes to serve our clients better.",
+    ],
   },
 ];
 
@@ -1144,7 +1158,9 @@ function renderAbout() {
               (value) => `
                 <article class="value-card">
                   <h3>${escapeHtml(value.title)}</h3>
-                  <p>${escapeHtml(value.text)}</p>
+                  <ul>
+                    ${value.points.map((point) => `<li>${escapeHtml(point)}</li>`).join("")}
+                  </ul>
                 </article>
               `
             )
