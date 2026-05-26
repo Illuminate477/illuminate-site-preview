@@ -67,6 +67,12 @@ const clientLogos = [
   { name: "Moderna", src: figmaImages.clientLogos.moderna, className: "client-logo-moderna" },
 ];
 
+const clientTestimonials = [
+  {
+    quote: "When you want strategic thinking and creativity packaged in one – that’s the service Illuminate can provide.",
+  },
+];
+
 const contact = {
   address: ["477 Harrison Avenue", "Suite 2B", "Boston, MA 02118"],
   phone: "617.423.9300",
@@ -870,6 +876,32 @@ function renderClientLogoShowcase() {
   `;
 }
 
+function renderClientTestimonials() {
+  return `
+    <section class="section client-testimonials">
+      <div class="container">
+        <div class="section-head centered">
+          <div>
+            <p class="eyebrow">Client Testimonials</p>
+            <h2>What partners value about working with Illuminate.</h2>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          ${clientTestimonials
+            .map(
+              (testimonial) => `
+                <figure class="testimonial-quote">
+                  <blockquote>${escapeHtml(testimonial.quote)}</blockquote>
+                </figure>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 function renderIbotSpotlight() {
   return `
     <section class="section ibot-section">
@@ -1230,6 +1262,7 @@ function renderNews() {
 function renderPartners() {
   return `
     ${renderHeader("PARTNERS", "Illuminate is a proud partner of the following life sciences field training and development leaders.")}
+    ${renderClientTestimonials()}
     <section class="section">
       <div class="container split-grid">
         ${renderClientLogoShowcase()}
