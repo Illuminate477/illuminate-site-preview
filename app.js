@@ -49,7 +49,7 @@ const figmaImages = {
 const figmaVideos = {
   header: "assets/video/header-video-2025.mp4",
   elearningDemo: "assets/video/elearning-demo-2025-final.mp4",
-  ibot: "assets/video/key-concepts-video.mp4",
+  ibot: "assets/video/ibot-demo.mp4",
   keyConcepts: "assets/video/key-concepts-video.mp4",
   piExplorerDemo: "assets/video/pi-explorer-demo.mp4",
   csExplorerDemo: "assets/video/cs-explorer-demo.mp4",
@@ -722,7 +722,7 @@ function renderDetailMedia(item) {
   if (item.detailVideo) {
     return `
       <figure class="solution-media solution-video-media">
-        <video class="asset-video" autoplay muted loop controls preload="metadata" playsinline${item.image ? ` poster="${item.image}"` : ""}>
+        <video class="asset-video" muted loop controls preload="metadata" playsinline data-autoplay-on-view${item.image ? ` poster="${item.image}"` : ""}>
           <source src="${item.detailVideo}" type="video/mp4" />
         </video>
       </figure>
@@ -878,7 +878,7 @@ function renderIbotSpotlight() {
           </div>
         </div>
         <div class="ibot-visual ibot-video-panel" aria-label="iBot video preview">
-          <video class="ibot-video" autoplay muted loop playsinline controls preload="metadata">
+          <video class="ibot-video" muted loop playsinline controls preload="metadata" data-autoplay-on-view>
             <source src="${figmaVideos.ibot}" type="video/mp4" />
           </video>
         </div>
@@ -960,7 +960,7 @@ function renderHome() {
     <section class="section">
       <div class="container feature-grid">
         <div class="visual-panel media-panel">
-          <video class="asset-video" controls preload="metadata" playsinline>
+          <video class="asset-video" controls muted preload="metadata" playsinline data-autoplay-on-view>
             <source src="${figmaVideos.keyConcepts}" type="video/mp4" />
           </video>
         </div>
@@ -1055,7 +1055,7 @@ function renderDetail(item) {
         ${renderGallery(item)}
         ${
           item.video
-            ? `<div class="inline-media"><video class="asset-video" controls preload="metadata" playsinline><source src="${item.video}" type="video/mp4" /></video></div>`
+            ? `<div class="inline-media"><video class="asset-video" controls muted preload="metadata" playsinline data-autoplay-on-view><source src="${item.video}" type="video/mp4" /></video></div>`
             : ""
         }
       </div>
@@ -1305,6 +1305,7 @@ function renderNotFound() {
 
 let activeTeamTrigger = null;
 let carouselTimers = [];
+let viewportVideoObserver = null;
 
 function openTeamModal(index) {
   const member = team[index];
@@ -1368,6 +1369,61 @@ function initCarousels() {
   });
 }
 
+function pauseViewportVideo(video) {
+  video.dataset.autoPaused = "true";
+  video.pause();
+  window.setTimeout(() => {
+    delete video.dataset.autoPaused;
+  }, 0);
+}
+
+function initViewportVideos() {
+  if (viewportVideoObserver) {
+    viewportVideoObserver.disconnect();
+    viewportVideoObserver = null;
+  }
+
+  const videos = Array.from(document.querySelectorAll("video[data-autoplay-on-view]"));
+  if (!videos.length) return;
+
+  videos.forEach((video) => {
+    video.muted = true;
+    video.playsInline = true;
+    video.addEventListener("pause", () => {
+      if (!video.dataset.autoPaused && !video.ended) video.dataset.userPaused = "true";
+    });
+    video.addEventListener("play", () => {
+      delete video.dataset.userPaused;
+    });
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    videos.forEach((video) => {
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+    });
+    return;
+  }
+
+  viewportVideoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.35) {
+          if (video.dataset.userPaused === "true") return;
+          const playPromise = video.play();
+          if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+        } else if (!video.paused) {
+          pauseViewportVideo(video);
+        }
+      });
+    },
+    { threshold: [0, 0.35, 0.7] }
+  );
+
+  videos.forEach((video) => viewportVideoObserver.observe(video));
+}
+
 function scrollCarousel(button) {
   const shell = button.closest("[data-carousel]");
   const direction = button.dataset.carouselControl === "prev" ? -1 : 1;
@@ -1397,6 +1453,7 @@ function renderRoute() {
   document.querySelector(".menu-toggle")?.setAttribute("aria-expanded", "false");
   window.scrollTo({ top: 0, behavior: "instant" });
   initCarousels();
+  initViewportVideos();
 }
 
 function init() {
