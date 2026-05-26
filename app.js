@@ -1057,17 +1057,12 @@ function renderDetail(item) {
 function renderLeadership() {
   return `
     ${renderHeader(leadership.title, leadership.headline)}
-    <section class="section">
-      <div class="container detail-layout">
-        <aside class="detail-visual">
-          <span class="leadership-logo-mark" aria-hidden="true">
-            <img src="${figmaImages.leadershipAcceleratorLogo}" alt="" />
-          </span>
-          <h2>Leadership Accelerator</h2>
-          <a class="button" href="https://www.babson.edu/" target="_blank" rel="noreferrer">Learn More</a>
-        </aside>
-        <article class="prose">
-          <h2>${escapeHtml(leadership.headline)}</h2>
+    <section class="section solution-detail leadership-detail">
+      <div class="container">
+        <div class="solution-cta-row">
+          <a class="button solution-cta-tab" href="https://www.babson.edu/" target="_blank" rel="noreferrer">Learn More</a>
+        </div>
+        <article class="prose leadership-copy">
           ${paragraphs(leadership.body)}
         </article>
       </div>
