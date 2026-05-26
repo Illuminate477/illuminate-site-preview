@@ -1,6 +1,7 @@
 const figmaImages = {
   logo: "assets/brand/illuminate-logo.png",
   footerLogo: "assets/brand/illuminate-logo-white-yellow.png",
+  leadershipAcceleratorLogo: "assets/brand/leadership/leadership-accelerator-logo.png",
   footer: "assets/figma/illuminate-footer-background.jpg",
   pix: "assets/figma/PIX.png",
   csx: "assets/figma/CSX.png",
@@ -35,6 +36,7 @@ const figmaImages = {
   icons: {
     productLaunch: "assets/figma/component-13-product-launches.png",
     nationalMeetings: "assets/figma/component-14-national-meetings.png",
+    workshops: "assets/figma/workshop-icon-2026.png",
     rareDisease: "assets/figma/component-15-rare-disease-oncology.png",
     foundational: "assets/figma/component-16-foundational-learning.png",
     retention: "assets/figma/component-17-learning-retention.png",
@@ -122,8 +124,8 @@ const solutions = [
     navTitle: "Workshops",
     route: "/workshops",
     icon: "W",
-    iconImage: figmaImages.icons.nationalMeetings,
-    detailIcon: figmaImages.icons.productLaunchBlue,
+    iconImage: figmaImages.icons.workshops,
+    detailIcon: figmaImages.icons.workshops,
     image: figmaImages.workshop,
     video: figmaVideos.workshopPresentation,
     kicker: "OUR SOLUTIONS: WORKSHOPS",
@@ -241,12 +243,12 @@ const solutions = [
 ];
 
 const leadership = {
-  route: "/leadership-bootcamp",
-  title: "Babson-Illuminate Leadership Bootcamp",
+  route: "/leadership-accelerator",
+  title: "Leadership Accelerator",
   headline: "Bringing the Entrepreneurial Mindset to Life Sciences",
   body: [
-    "Babson College, ranked the top college for entrepreneurship by U.S. News & World Report and 10th best college by the Wall Street Journal, and Illuminate, an award-winning developer of innovative training programs for the global life sciences industry, have collaborated to offer the Babson-Illuminate Leadership Bootcamp to life science organizations.",
-    "The Babson-Illuminate Leadership Bootcamp is a customizable program consisting of a series of either three or seven 90-minute weekly interactive sessions designed to enhance an organization’s business acumen, professional growth, and inclusive and entrepreneurial leadership skills. Sessions are led by senior Babson faculty utilizing “Entrepreneurial Thought & Action®”, Babson’s trademarked solutions-focused teaching methodology, and can be customized to meet your organization's needs.",
+    "Babson College, ranked the top college for entrepreneurship by U.S. News & World Report and 10th best college by the Wall Street Journal, and Illuminate, an award-winning developer of innovative training programs for the global life sciences industry, have collaborated to offer Leadership Accelerator to life science organizations.",
+    "Leadership Accelerator is a customizable program consisting of a series of either three or seven 90-minute weekly interactive sessions designed to enhance an organization’s business acumen, professional growth, and inclusive and entrepreneurial leadership skills. Sessions are led by senior Babson faculty utilizing “Entrepreneurial Thought & Action®”, Babson’s trademarked solutions-focused teaching methodology, and can be customized to meet your organization's needs.",
     "Through a combination of interactive case studies, class discussions, and team projects, participants will learn new ways of thinking to solve difficult problems, assess and mitigate risk, and lead with empathy and inclusivity.",
     "This program is ideally designed for high-potential life science individuals and leaders who are seeking professional development opportunities to enhance their business acumen, professional development, and leadership skills. Some of the topics offered include business models and metrics, innovation, financial acumen, leadership, and diversity, equity, and inclusion.",
   ],
@@ -583,7 +585,7 @@ const navGroups = [
     label: "Solutions",
     items: solutions.map(({ navTitle, route }) => ({ label: navTitle, route })),
   },
-  { label: "Leadership Bootcamp", route: leadership.route },
+  { label: "Leadership Accelerator", route: leadership.route },
   { label: "News", route: "/news" },
   { label: "Partners", route: "/partners" },
   { label: "Contact", route: "/contact" },
@@ -607,6 +609,7 @@ function canonicalPath(path) {
     "/products/pi-explorer": "/pi-explorer",
     "/products/cs-explorer": "/cs-explorer",
     "/products/magister-lms": "/magister-lms",
+    "/leadership-bootcamp": leadership.route,
   };
 
   return aliases[path] || path;
@@ -632,7 +635,7 @@ function routeFromText(value) {
     { pattern: /\b(pi explorer|pix|prescribing information)\b/, route: "/pi-explorer" },
     { pattern: /\b(cs explorer|clinical study|clinical studies)\b/, route: "/cs-explorer" },
     { pattern: /\b(magister|lms)\b/, route: "/magister-lms" },
-    { pattern: /\b(leadership|bootcamp|babson)\b/, route: leadership.route },
+    { pattern: /\b(leadership|accelerator|bootcamp|babson)\b/, route: leadership.route },
     { pattern: /\babout\b/, route: "/about-us" },
     { pattern: /\bcontact\b/, route: "/contact" },
     { pattern: /\b(news|media|awards?)\b/, route: "/news" },
@@ -676,8 +679,9 @@ function renderIcon(item, variant = "default") {
 
   const src = variant === "detail" && item.detailIcon ? item.detailIcon : item.iconImage;
   if (src) {
+    const iconClass = item.id ? ` figma-icon-${escapeHtml(item.id)}` : "";
     return `
-      <span class="figma-icon ${variant === "detail" ? "detail-icon" : ""}" aria-hidden="true">
+      <span class="figma-icon${iconClass} ${variant === "detail" ? "detail-icon" : ""}" aria-hidden="true">
         <img src="${src}" alt="" />
       </span>
     `;
@@ -1056,8 +1060,10 @@ function renderLeadership() {
     <section class="section">
       <div class="container detail-layout">
         <aside class="detail-visual">
-          ${renderIcon({ icon: "LB" })}
-          <h2>Leadership Bootcamp</h2>
+          <span class="leadership-logo-mark" aria-hidden="true">
+            <img src="${figmaImages.leadershipAcceleratorLogo}" alt="" />
+          </span>
+          <h2>Leadership Accelerator</h2>
           <a class="button" href="https://www.babson.edu/" target="_blank" rel="noreferrer">Learn More</a>
         </aside>
         <article class="prose">

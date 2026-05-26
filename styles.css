@@ -534,6 +534,14 @@ h3 {
   transform-origin: 50% 8%;
 }
 
+.solution-overview-card .figma-icon-workshops img,
+.icon-card .figma-icon-workshops img,
+.content-card .figma-icon-workshops img,
+.detail-visual .figma-icon-workshops img {
+  object-position: center;
+  transform: none;
+}
+
 .product-logo-icon {
   display: flex;
   width: min(270px, 100%);
@@ -1269,6 +1277,19 @@ h3 {
 .detail-visual .detail-icon {
   width: 230px;
   height: 230px;
+}
+
+.leadership-logo-mark {
+  display: flex;
+  width: min(320px, 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+.leadership-logo-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .detail-visual h2 {
