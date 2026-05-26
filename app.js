@@ -343,7 +343,7 @@ const team = [
   {
     name: "Mason Jones",
     title: "Business Development Specialist",
-    image: "assets/team/mason-jones.jpg",
+    image: "assets/team/mason-jones-safe.jpg",
     bio: "Mason Jones brings over 6 years of B2B sales experience to Illuminate, with a strong track record of building relationships and generating new business across multiple industries. His background spans technology, communications, and life sciences, giving him a well-rounded perspective on the challenges organizations face when developing and enabling their field teams.\n\nA graduate of the University of Georgia with a BS in Biology and a minor in Psychology, Mason combines analytical thinking with a strong understanding of human behavior, allowing him to take a thoughtful, consultative approach to business development and client engagement.",
   },
   {
@@ -370,7 +370,7 @@ const team = [
   {
     name: "Mike Miedzianowski",
     title: "Business Development Specialist",
-    image: "assets/team/mike-miedzianowski.jpg",
+    image: "assets/team/mike-miedzianowski-safe.jpg",
     bio: "Mike Miedzianowski brings a rare combination of elite competitive drive and refined business acumen to every professional endeavor. A standout athlete, Mike was drafted by the Baltimore Orioles in 2011. He attended High Point University as a student athlete and finished obtaining his bachelor’s in business administration from Indian River State College.\n\nFor over 9 years, Mike has thrived in the competitive world of high-end jewelry and Swiss timepieces, developing expertise in luxury brand representation, high net-worth client engagement, and consultative sales. Mike leverages his background in high-performance environments with strong business acumen, enabling him to build strategic relationships and drive growth by connecting clients with impactful training solutions.",
   },
   {
@@ -395,7 +395,7 @@ const team = [
   {
     name: "Janiel Rosario",
     title: "Project Associate",
-    image: "assets/team/janiel-rosario.jpg",
+    image: "assets/team/janiel-rosario-safe.jpg",
     bio: "Janiel Rosario, an ambitious Project Associate intern at Illuminate and a passionate student at Year Up, a program designed to close the opportunity divide by providing young adults with skills, experience, and support, is committed to excelling in project management. With the skills acquired at Year Up, Janiel brings experience in customer-centered roles, with a focus on adaptability, communication, and problem-solving.",
   },
   {
@@ -414,7 +414,7 @@ const team = [
   {
     name: "Farheen Shaikh",
     title: "Medical Reviewer",
-    image: "assets/team/farheen-shaikh.jpg",
+    image: "assets/team/farheen-shaikh-safe.jpg",
     bio: "Farheen is a Medical Reviewer at Illuminate with experience in medical and scientific content review across various therapeutic areas and disease states, including oncology and rare diseases. She is committed to applying her expertise in interpreting clinical trial data and conducting literature reviews to ensure accuracy, clarity, and compliance across a wide range of deliverables. Farheen holds a Doctor of Pharmacy (PharmD) and a Master’s in Regulatory Affairs from MCPHS University in Boston.",
   },
   {
@@ -427,7 +427,7 @@ const team = [
   {
     name: "Rich Daley",
     title: "Graphic Designer",
-    image: "assets/team/rich-daley.jpg",
+    image: "assets/team/rich-daley-safe.jpg",
     bio: "With a Bachelor of Fine Arts in Sequential Art from the Savannah College of Art and Design, Rich brings a wealth of experience in visual storytelling, layout design, and corporate brand building. He is a creative problem solver with experience in all aspects of design. The addition of Rich to our creative team ensures that our client’s projects are informative, visually pleasing, and technically sound.",
   },
 ];
