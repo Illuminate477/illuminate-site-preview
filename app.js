@@ -357,7 +357,7 @@ const team = [
   {
     name: "Mason Jones",
     title: "Business Development Specialist",
-    image: "assets/team/mason-jones-safe.jpg",
+    image: "assets/team/mason-jones-headshot-20260526.jpg",
     bio: "Mason Jones brings over 6 years of B2B sales experience to Illuminate, with a strong track record of building relationships and generating new business across multiple industries. His background spans technology, communications, and life sciences, giving him a well-rounded perspective on the challenges organizations face when developing and enabling their field teams.\n\nA graduate of the University of Georgia with a BS in Biology and a minor in Psychology, Mason combines analytical thinking with a strong understanding of human behavior, allowing him to take a thoughtful, consultative approach to business development and client engagement.",
   },
   {
@@ -384,7 +384,7 @@ const team = [
   {
     name: "Mike Miedzianowski",
     title: "Business Development Specialist",
-    image: "assets/team/mike-miedzianowski-safe.jpg",
+    image: "assets/team/mike-miedzianowski-headshot-20260526.jpg",
     bio: "Mike Miedzianowski brings a rare combination of elite competitive drive and refined business acumen to every professional endeavor. A standout athlete, Mike was drafted by the Baltimore Orioles in 2011. He attended High Point University as a student athlete and finished obtaining his bachelor’s in business administration from Indian River State College.\n\nFor over 9 years, Mike has thrived in the competitive world of high-end jewelry and Swiss timepieces, developing expertise in luxury brand representation, high net-worth client engagement, and consultative sales. Mike leverages his background in high-performance environments with strong business acumen, enabling him to build strategic relationships and drive growth by connecting clients with impactful training solutions.",
   },
   {
