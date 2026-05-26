@@ -895,18 +895,32 @@ function renderHome() {
       </div>
     </section>
 
-    <section class="section cream">
-      <div class="container feature-grid">
-        <div class="feature-copy">
+    <section class="section cream technology-section">
+      <div class="container feature-grid technology-showcase">
+        <div class="feature-copy technology-copy">
           <p class="eyebrow">Learning technology</p>
           <h2>Custom products that make complex content easier to grasp.</h2>
           <p>PI Explorer, Clinical Study Explorer, and Magister LMS help field representatives understand critical information, retain clinical study content, and access learning in a platform that can be customized to your brand, layout, and content organization.</p>
+          <div class="tech-stack" aria-label="Learning technology products">
+            <a class="tech-platform" href="#/pi-explorer">
+              <img src="${figmaImages.productLogos.piExplorer}" alt="PI Explorer" />
+              <span>Complex prescribing information made easier to explore, discuss, and retain.</span>
+            </a>
+            <a class="tech-platform" href="#/cs-explorer">
+              <img src="${figmaImages.productLogos.csExplorer}" alt="CS Explorer" />
+              <span>Clinical study content organized into an interactive learning experience.</span>
+            </a>
+            <a class="tech-platform" href="#/magister-lms">
+              <img src="${figmaImages.productLogos.magister}" alt="Magister LMS" />
+              <span>A configurable LMS for branded learning, content delivery, and support.</span>
+            </a>
+          </div>
           <div class="actions">
             <a class="button" href="#/pi-explorer">Product Details</a>
-          <a class="button secondary" href="#/magister-lms">Explore LMS</a>
+            <a class="button secondary" href="#/magister-lms">Explore LMS</a>
           </div>
         </div>
-        <div class="visual-panel">
+        <div class="visual-panel technology-visual">
           <img class="asset-image" src="${figmaImages.elearningMockups}" alt="Learning technology mockups from the Figma design" />
         </div>
       </div>
