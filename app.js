@@ -863,7 +863,6 @@ function renderHome() {
           <span>Learning Technology</span>
           <span>Sustainment</span>
         </div>
-        <p class="hero-copy">Whether you’re launching a new product, conducting workshops, or developing learning engagement strategies, Illuminate offers innovative clinical learning and development solutions that transform complexity into creative, high-impact learning.</p>
         <div class="hero-actions">
           <a class="button" href="#/contact">Start a Project</a>
           <a class="button secondary" href="#/contact">Schedule a Consultation</a>
@@ -877,6 +876,7 @@ function renderHome() {
           <div>
             <p class="eyebrow">Our Solutions</p>
             <h2>Innovative solutions for every field training need.</h2>
+            <p class="home-solutions-intro">Whether you’re launching a new product, conducting workshops, or developing learning engagement strategies, Illuminate offers innovative clinical learning and development solutions that transform complexity into creative, high-impact learning.</p>
           </div>
           <span class="rule" aria-hidden="true"></span>
         </div>

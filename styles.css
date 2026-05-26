@@ -434,6 +434,11 @@ h3 {
   font-size: 21px;
 }
 
+.section-head .home-solutions-intro {
+  max-width: 880px;
+  color: var(--ink);
+}
+
 .rule {
   flex: 1;
   height: 2px;
