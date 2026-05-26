@@ -1,5 +1,6 @@
 const figmaImages = {
   logo: "assets/brand/illuminate-logo.png",
+  footerLogo: "assets/brand/illuminate-logo-white-yellow.png",
   footer: "assets/figma/illuminate-footer-background.jpg",
   pix: "assets/figma/PIX.png",
   csx: "assets/figma/CSX.png",
@@ -794,7 +795,7 @@ function renderFooter() {
     <footer class="footer" style="--footer-image: url('${figmaImages.footer}')">
       <div class="container">
         <div class="footer-main">
-          <a class="brand-mark footer-brand" href="#/" aria-label="Illuminate home"><img src="${figmaImages.logo}" alt="Illuminate" /></a>
+          <a class="brand-mark footer-brand" href="#/" aria-label="Illuminate home"><img src="${figmaImages.footerLogo}" alt="Illuminate" /></a>
           <div>
             <h2>Contact:</h2>
             <p><a href="mailto:${contact.email}">${contact.email}</a></p>
@@ -905,7 +906,6 @@ function renderHome() {
         </div>
         <div class="hero-actions">
           <a class="button" href="#/contact">Start a Project</a>
-          <a class="button secondary" href="#/contact">Schedule a Consultation</a>
         </div>
       </div>
     </section>
@@ -935,20 +935,6 @@ function renderHome() {
           <div class="actions">
             <a class="button" href="#/pi-explorer">Product Details</a>
             <a class="button secondary" href="#/magister-lms">Explore LMS</a>
-          </div>
-          <div class="tech-stack" aria-label="Learning technology products">
-            <a class="tech-platform" href="#/pi-explorer">
-              <img src="${figmaImages.productLogos.piExplorer}" alt="PI Explorer" />
-              <span>Complex prescribing information made easier to explore, discuss, and retain.</span>
-            </a>
-            <a class="tech-platform" href="#/cs-explorer">
-              <img src="${figmaImages.productLogos.csExplorer}" alt="CS Explorer" />
-              <span>Clinical study content organized into an interactive learning experience.</span>
-            </a>
-            <a class="tech-platform" href="#/magister-lms">
-              <img src="${figmaImages.productLogos.magister}" alt="Magister LMS" />
-              <span>A configurable LMS for branded learning, content delivery, and support.</span>
-            </a>
           </div>
         </div>
         <div class="visual-panel technology-visual">

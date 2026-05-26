@@ -327,7 +327,8 @@ h3 {
 }
 
 .hero h1 strong {
-  font-weight: 700;
+  color: #ffd000;
+  font-weight: 400;
 }
 
 .hero-copy {
@@ -763,44 +764,6 @@ h3 {
 
 .technology-copy p:not(.eyebrow) {
   max-width: 560px;
-}
-
-.tech-stack {
-  display: grid;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.tech-platform {
-  display: grid;
-  grid-template-columns: 132px minmax(0, 1fr);
-  gap: 14px;
-  align-items: center;
-  padding: 10px 12px;
-  border: 1px solid #ccecf4;
-  border-radius: 8px;
-  color: var(--ink);
-  background: rgba(255, 255, 255, 0.78);
-  text-decoration: none;
-  box-shadow: 0 12px 30px rgba(0, 45, 70, 0.08);
-}
-
-.tech-platform:hover {
-  border-color: var(--blue);
-  transform: translateY(-1px);
-}
-
-.tech-platform img {
-  display: block;
-  max-width: 132px;
-  max-height: 42px;
-  object-fit: contain;
-  object-position: left center;
-}
-
-.tech-platform span {
-  font-size: 14px;
-  line-height: 1.38;
 }
 
 .technology-copy .actions {
@@ -1759,7 +1722,7 @@ h3 {
   overflow: hidden;
   padding: 78px 0 46px;
   color: var(--white);
-  background: #07a6df;
+  background: #0eaedf;
 }
 
 .footer::before {
@@ -1769,9 +1732,9 @@ h3 {
   background:
     var(--footer-image, linear-gradient(135deg, rgba(0, 45, 70, 0.16), rgba(255, 255, 255, 0))) center / cover no-repeat,
     radial-gradient(circle at 16% 24%, rgba(255, 255, 255, 0.16) 0 10%, transparent 11%),
-    radial-gradient(circle at 78% 30%, rgba(0, 45, 70, 0.2) 0 16%, transparent 17%),
-    linear-gradient(135deg, rgba(0, 45, 70, 0.16), rgba(255, 255, 255, 0));
-  opacity: 0.42;
+    radial-gradient(circle at 78% 30%, rgba(0, 45, 70, 0.14) 0 16%, transparent 17%),
+    linear-gradient(135deg, rgba(0, 45, 70, 0.08), rgba(255, 255, 255, 0));
+  opacity: 0.55;
 }
 
 .footer .container {
@@ -1788,9 +1751,10 @@ h3 {
 
 .footer .brand-mark {
   width: 240px;
-  padding: 13px 18px;
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 8px;
+  max-width: 100%;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
 }
 
 .footer h2 {
@@ -2045,15 +2009,6 @@ h3 {
 
   .technology-showcase {
     gap: 28px;
-  }
-
-  .tech-platform {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .tech-platform img {
-    max-width: 184px;
   }
 
   .section {
