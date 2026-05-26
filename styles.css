@@ -1370,6 +1370,21 @@ h3 {
   object-fit: contain;
 }
 
+.solution-video-media {
+  background: var(--white);
+}
+
+.solution-video-media .asset-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  aspect-ratio: 16 / 9;
+  background: var(--white);
+  object-fit: contain;
+}
+
 .solution-feature-highlight {
   display: grid;
   grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1fr);
@@ -2221,6 +2236,10 @@ h3 {
   .solution-media .asset-image {
     min-height: 260px;
     padding: 10px;
+  }
+
+  .solution-video-media .asset-video {
+    min-height: 0;
   }
 
   .solution-feature-highlight {

@@ -51,6 +51,8 @@ const figmaVideos = {
   elearningDemo: "assets/video/elearning-demo-2025-final.mp4",
   ibot: "assets/video/key-concepts-video.mp4",
   keyConcepts: "assets/video/key-concepts-video.mp4",
+  piExplorerDemo: "assets/video/pi-explorer-demo.mp4",
+  csExplorerDemo: "assets/video/cs-explorer-demo.mp4",
   workshopPresentation: "assets/video/workshop-presentation-video-v3.mp4",
 };
 
@@ -173,6 +175,7 @@ const solutions = [
     detailIcon: figmaImages.icons.productLaunchBlue,
     logoImage: figmaImages.productLogos.piExplorer,
     image: figmaImages.pix,
+    detailVideo: figmaVideos.piExplorerDemo,
     kicker: "OUR SOLUTIONS: PI EXPLORER",
     headline: "Innovative solutions for every sales training need.",
     short:
@@ -192,6 +195,7 @@ const solutions = [
     detailIcon: figmaImages.icons.innovationsBlue,
     logoImage: figmaImages.productLogos.csExplorer,
     image: figmaImages.csx,
+    detailVideo: figmaVideos.csExplorerDemo,
     kicker: "OUR SOLUTIONS: Clinical Study Explorer",
     headline: "Innovative solutions for every sales training need.",
     short:
@@ -687,7 +691,17 @@ function renderGallery(item) {
 }
 
 function renderDetailMedia(item) {
-  if (!item.image) return "";
+  if (!item.image && !item.detailVideo) return "";
+
+  if (item.detailVideo) {
+    return `
+      <figure class="solution-media solution-video-media">
+        <video class="asset-video" autoplay muted loop controls preload="metadata" playsinline${item.image ? ` poster="${item.image}"` : ""}>
+          <source src="${item.detailVideo}" type="video/mp4" />
+        </video>
+      </figure>
+    `;
+  }
 
   return `
     <figure class="solution-media">
@@ -991,6 +1005,8 @@ function renderSolutionsOverview() {
 }
 
 function renderDetail(item) {
+  const hasDetailMedia = item.image || item.detailVideo;
+
   return `
     ${renderHeader(item.kicker, item.headline)}
     <section class="section solution-detail">
@@ -998,7 +1014,7 @@ function renderDetail(item) {
         <div class="solution-cta-row">
           <a class="button solution-cta-tab" href="#/contact">Get Started</a>
         </div>
-        <div class="solution-detail-grid ${item.image ? "" : "solution-detail-grid-full"}">
+        <div class="solution-detail-grid ${hasDetailMedia ? "" : "solution-detail-grid-full"}">
           <article class="prose solution-copy">
           ${paragraphs(item.body)}
           ${item.closing ? `<p class="solution-closing">${escapeHtml(item.closing)}</p>` : ""}
