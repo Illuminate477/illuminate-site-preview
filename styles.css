@@ -827,23 +827,6 @@ h3 {
   box-shadow: 0 22px 62px rgba(0, 45, 70, 0.12);
 }
 
-.technology-video-panel {
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, #00364d 0%, #0ea5d7 100%);
-  box-shadow: 0 22px 62px rgba(0, 45, 70, 0.12);
-}
-
-.technology-video-panel .technology-video {
-  width: 100%;
-  max-height: none;
-  min-height: 100%;
-  border: 0;
-  border-radius: 8px;
-  background: transparent;
-  object-fit: cover;
-}
-
 .media-panel {
   display: grid;
   place-items: center;

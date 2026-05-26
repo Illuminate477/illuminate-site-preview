@@ -905,10 +905,10 @@ function renderHome() {
         <div class="feature-copy technology-copy">
           <p class="eyebrow">Learning technology</p>
           <h2>Custom products that make complex content easier to grasp.</h2>
-          <p>PI Explorer, Clinical Study Explorer, Magister LMS, and iBot help field representatives understand critical information, retain clinical study content, access branded learning, and get AI-supported reinforcement when they need it.</p>
+          <p>PI Explorer, Clinical Study Explorer, and Magister LMS help field representatives understand critical information, retain clinical study content, and access learning in a platform that can be customized to your brand, layout, and content organization.</p>
           <div class="actions">
             <a class="button" href="#/pi-explorer">Product Details</a>
-            <a class="button secondary" href="#/contact">Explore iBot</a>
+            <a class="button secondary" href="#/magister-lms">Explore LMS</a>
           </div>
           <div class="tech-stack" aria-label="Learning technology products">
             <a class="tech-platform" href="#/pi-explorer">
@@ -925,10 +925,8 @@ function renderHome() {
             </a>
           </div>
         </div>
-        <div class="visual-panel technology-visual technology-video-panel">
-          <video class="asset-video technology-video" autoplay muted loop playsinline controls preload="metadata" aria-label="iBot video preview">
-            <source src="${figmaVideos.ibot}" type="video/mp4" />
-          </video>
+        <div class="visual-panel technology-visual">
+          <img class="asset-image" src="${figmaImages.elearningMockups}" alt="Learning technology mockups from the Figma design" />
         </div>
       </div>
     </section>
