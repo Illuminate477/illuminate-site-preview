@@ -822,6 +822,23 @@ h3 {
   box-shadow: 0 22px 62px rgba(0, 45, 70, 0.12);
 }
 
+.technology-video-panel {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #00364d 0%, #0ea5d7 100%);
+  box-shadow: 0 22px 62px rgba(0, 45, 70, 0.12);
+}
+
+.technology-video-panel .technology-video {
+  width: 100%;
+  max-height: none;
+  min-height: 100%;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  object-fit: cover;
+}
+
 .media-panel {
   display: grid;
   place-items: center;
@@ -1152,104 +1169,27 @@ h3 {
 
 .ibot-visual {
   display: grid;
-  min-height: 436px;
+  min-height: 0;
   place-items: center;
-  padding: 42px;
   border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 206, 0, 0.18), rgba(255, 255, 255, 0) 38%),
-    linear-gradient(135deg, #08a6df 0%, #d8f6fb 100%);
   box-shadow: 0 24px 54px rgba(0, 45, 70, 0.14);
 }
 
-.ibot-window {
-  width: min(100%, 530px);
-  padding: 24px;
-  border: 1px solid rgba(0, 45, 70, 0.1);
-  border-radius: 8px;
-  background: var(--white);
-  box-shadow: 0 24px 48px rgba(0, 45, 70, 0.18);
+.ibot-video-panel {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, #00364d 0%, #0ea5d7 100%);
 }
 
-.ibot-window-top {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  column-gap: 14px;
-  align-items: center;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-}
-
-.ibot-window-top strong {
-  color: var(--blue-strong);
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 28px;
-  line-height: 1;
-}
-
-.ibot-window-top span:last-child {
-  grid-column: 2;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.ibot-logo-mark {
-  display: grid;
-  grid-row: 1 / 3;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 8px;
-  color: var(--white);
-  background: var(--blue);
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1;
-}
-
-.ibot-message {
-  max-width: 84%;
-  margin-top: 22px;
-  padding: 16px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  line-height: 1.45;
-}
-
-.ibot-message-question {
-  margin-left: auto;
-  color: var(--white);
-  background: var(--blue-strong);
-}
-
-.ibot-message-answer {
-  color: var(--ink);
-  background: var(--blue-soft);
-}
-
-.ibot-prompt-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 26px;
-  padding: 14px 16px;
-  border: 1px solid #b8dde8;
-  border-radius: 8px;
-  color: var(--muted);
-  background: #f7fcfe;
-}
-
-.ibot-prompt-row b {
-  display: grid;
-  flex: 0 0 36px;
-  height: 36px;
-  place-items: center;
-  border-radius: 8px;
-  color: var(--white);
-  background: var(--blue);
-  font-size: 20px;
+.ibot-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+  background: transparent;
+  object-fit: cover;
 }
 
 .cards-grid {
@@ -2245,16 +2185,11 @@ h3 {
   }
 
   .ibot-visual {
-    min-height: 0;
-    padding: 18px;
+    width: 100%;
   }
 
-  .ibot-window {
-    padding: 18px;
-  }
-
-  .ibot-message {
-    max-width: 100%;
+  .ibot-video {
+    min-height: 230px;
   }
 
   .icon-orb {

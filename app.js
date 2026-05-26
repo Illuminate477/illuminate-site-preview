@@ -49,6 +49,7 @@ const figmaImages = {
 const figmaVideos = {
   header: "assets/video/header-video-2025.mp4",
   elearningDemo: "assets/video/elearning-demo-2025-final.mp4",
+  ibot: "assets/video/key-concepts-video.mp4",
   keyConcepts: "assets/video/key-concepts-video.mp4",
   workshopPresentation: "assets/video/workshop-presentation-video-v3.mp4",
 };
@@ -836,20 +837,10 @@ function renderIbotSpotlight() {
             <a class="button" href="#/contact">Explore iBot</a>
           </div>
         </div>
-        <div class="ibot-visual" aria-label="iBot chatbot interface preview">
-          <div class="ibot-window">
-            <div class="ibot-window-top">
-              <span class="ibot-logo-mark">i</span>
-              <strong>iBot</strong>
-              <span>Live learning support</span>
-            </div>
-            <div class="ibot-message ibot-message-question">Can you clarify this key concept?</div>
-            <div class="ibot-message ibot-message-answer">Here’s the approved explanation, with the clinical takeaway highlighted.</div>
-            <div class="ibot-prompt-row">
-              <span>Ask about training content</span>
-              <b>&gt;</b>
-            </div>
-          </div>
+        <div class="ibot-visual ibot-video-panel" aria-label="iBot video preview">
+          <video class="ibot-video" autoplay muted loop playsinline controls preload="metadata">
+            <source src="${figmaVideos.ibot}" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
@@ -900,10 +891,10 @@ function renderHome() {
         <div class="feature-copy technology-copy">
           <p class="eyebrow">Learning technology</p>
           <h2>Custom products that make complex content easier to grasp.</h2>
-          <p>PI Explorer, Clinical Study Explorer, and Magister LMS help field representatives understand critical information, retain clinical study content, and access learning in a platform that can be customized to your brand, layout, and content organization.</p>
+          <p>PI Explorer, Clinical Study Explorer, Magister LMS, and iBot help field representatives understand critical information, retain clinical study content, access branded learning, and get AI-supported reinforcement when they need it.</p>
           <div class="actions">
             <a class="button" href="#/pi-explorer">Product Details</a>
-            <a class="button secondary" href="#/magister-lms">Explore LMS</a>
+            <a class="button secondary" href="#/contact">Explore iBot</a>
           </div>
           <div class="tech-stack" aria-label="Learning technology products">
             <a class="tech-platform" href="#/pi-explorer">
@@ -920,8 +911,10 @@ function renderHome() {
             </a>
           </div>
         </div>
-        <div class="visual-panel technology-visual">
-          <img class="asset-image" src="${figmaImages.elearningMockups}" alt="Learning technology mockups from the Figma design" />
+        <div class="visual-panel technology-visual technology-video-panel">
+          <video class="asset-video technology-video" autoplay muted loop playsinline controls preload="metadata" aria-label="iBot video preview">
+            <source src="${figmaVideos.ibot}" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>
