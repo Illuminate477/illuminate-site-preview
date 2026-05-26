@@ -901,6 +901,10 @@ function renderHome() {
           <p class="eyebrow">Learning technology</p>
           <h2>Custom products that make complex content easier to grasp.</h2>
           <p>PI Explorer, Clinical Study Explorer, and Magister LMS help field representatives understand critical information, retain clinical study content, and access learning in a platform that can be customized to your brand, layout, and content organization.</p>
+          <div class="actions">
+            <a class="button" href="#/pi-explorer">Product Details</a>
+            <a class="button secondary" href="#/magister-lms">Explore LMS</a>
+          </div>
           <div class="tech-stack" aria-label="Learning technology products">
             <a class="tech-platform" href="#/pi-explorer">
               <img src="${figmaImages.productLogos.piExplorer}" alt="PI Explorer" />
@@ -914,10 +918,6 @@ function renderHome() {
               <img src="${figmaImages.productLogos.magister}" alt="Magister LMS" />
               <span>A configurable LMS for branded learning, content delivery, and support.</span>
             </a>
-          </div>
-          <div class="actions">
-            <a class="button" href="#/pi-explorer">Product Details</a>
-            <a class="button secondary" href="#/magister-lms">Explore LMS</a>
           </div>
         </div>
         <div class="visual-panel technology-visual">
